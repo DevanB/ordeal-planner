@@ -1,0 +1,52 @@
+<template name="ordealsCreate">
+  <h2>Create Ordeal</h2>
+
+  <form id="createOrdealForm">
+    <div class="row">
+      <div class="col-xs-6">
+        <label for="vcInductions">Vice-Chief of Inductions</label>
+        <input type="text" class="form-control" id="vcInductions" placeholder="Vice-Chief of Inductions">
+      </div>
+      <div class="col-xs-6">
+        <label for="vcInductionsAdviser">Vice-Chief of Inductions Adviser</label>
+        <input type="text" class="form-control" id="vcInductionsAdviser" placeholder="Vice-Chief of Inductions Adviser">
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-xs-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="ex: Spring Ordeal 2015">
+      </div>
+      <div class="col-xs-3">
+        <label for="location">Location</label>
+        <input type="text" class="form-control" id="location" placeholder="ex: Camp Sequoyah">
+      </div>
+      <div class="col-xs-3">
+        <label for="date">Date Ordeal Begins</label>
+        <input type="date" class="form-control" id="date" placeholder="ex: 10/03/2015">
+      </div>
+      <div class="col-xs-3">
+        <label for="time">Time Ordeal Begins</label>
+        <input type="time" class="form-control" id="time" placeholder="ex: 05:00 PM">
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+</template>
+
+<!--
+  Name: String
+  Location: String
+  Date: Date
+  Time: String
+  VCInductions: String
+  VCInductionsAdviser: String
+  createdAt: Date
+  createdBy: String
+-->

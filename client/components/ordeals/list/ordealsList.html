@@ -1,0 +1,41 @@
+<template name="ordealsList">
+  <div class="row">
+    <h1>Ordeals</h1>
+    {{#if currentUser}}<a href="{{pathFor 'create-ordeal'}}" class="pull-right btn btn-sm btn-success"><i class="fa fa-plus"></i>&nbsp;Add Ordeal</a>{{/if}}
+  </div>
+
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each ordeals}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{location}}</td>
+          <td>{{dateFormatter date}}</td>
+          <td>{{time}}</td>
+          <td>
+            {{#if editOrdealAbility}}
+              <a href="{{pathFor 'edit-ordeal'}}">Edit</a>
+            {{else}}
+              <a href="{{pathFor 'view-ordeal'}}">View</a>
+            {{/if}}
+            {{#if isInRole 'admin'}}
+              <a href="#" class="deleteOrdealBtn">Delete</a>
+            {{/if}}
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+  </div>
+</template>

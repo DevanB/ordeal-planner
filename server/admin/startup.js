@@ -10,6 +10,9 @@ Meteor.startup(function(){
   customBrowserPolicies();
 
   // Generate Test Accounts
-  generateTestAccounts();
+  // generateTestAccounts();
+
+  // Add admin roles
+  addAdminAccount();
 
 });
