@@ -12,6 +12,10 @@ Template.ordealsList.helpers({
     } else {
       return false;
     }
+  },
+  notLoggedIn: function(){
+    if( Meteor.user()) { return false; }
+    else { return true; }
   }
 });
 
