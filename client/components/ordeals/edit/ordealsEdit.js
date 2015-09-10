@@ -1,9 +1,6 @@
 Template.ordealsEdit.helpers({
   ordeal: function(){
     return Ordeals.findOne();
-  },
-  sortedLateArrivals: function(lateArrivals) {
-    return _.sortBy(lateArrivals, function(lateArrival) { return lateArrival.eta; });
   }
 });
 
