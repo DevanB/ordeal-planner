@@ -35,7 +35,8 @@
             {{/if}}
             {{#if editOrdealAbility}}
               <a class="btn btn-sm btn-default" href="{{pathFor 'edit-ordeal'}}">Edit</a>
-            {{else}}
+            {{/if}}
+            {{#if notLoggedIn}}
               <a class="btn btn-sm btn-default" href="{{pathFor 'view-ordeal'}}">View</a>
             {{/if}}
           </td>
