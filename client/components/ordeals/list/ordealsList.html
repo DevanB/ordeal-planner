@@ -21,19 +21,27 @@
           <td>{{location}}</td>
           <td>{{date}}</td>
           <td>
-            {{#if editOrdealAbility}}
-              <a href="{{pathFor 'edit-ordeal'}}">Edit</a>
-            {{else}}
-              <a href="{{pathFor 'view-ordeal'}}">View</a>
-            {{/if}}
             {{#if isInRole 'admin'}}
-              <a href="#" class="deleteOrdealBtn">Delete</a>
+              <div class="btn-group">
+                <a class="btn btn-default" href="{{pathFor 'edit-ordeal'}}">Edit</a>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="deleteOrdealBtn">Delete</a></li>
+                </ul>
+              </div>
+            {{/if}}
+            {{#if editOrdealAbility}}
+              <a class="btn btn-sm btn-default" href="{{pathFor 'edit-ordeal'}}">Edit</a>
+            {{else}}
+              <a class="btn btn-sm btn-default" href="{{pathFor 'view-ordeal'}}">View</a>
             {{/if}}
           </td>
         </tr>
         {{/each}}
       </tbody>
     </table>
-
   </div>
 </template>

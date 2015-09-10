@@ -7,8 +7,7 @@ Template.ordealsList.helpers({
     return Ordeals.find();
   },
   editOrdealAbility: function(){
-    if (Meteor.user() && (this.createdBy === Meteor.userId() ||
-      Roles.userIsInRole(Meteor.user(), ['admin']))) {
+    if ( Meteor.user() && (this.createdBy === Meteor.userId()) ) {
       return true;
     } else {
       return false;

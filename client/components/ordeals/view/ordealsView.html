@@ -13,21 +13,17 @@
   </div>
   <hr>
   <div class="row">
-    <div class="col-xs-3">
+    <div class="col-xs-4">
       <label for="name">Name</label>
       <input type="text" value="{{name}}" class="form-control" id="name" placeholder="ex: Spring Ordeal 2015">
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-4">
       <label for="location">Location</label>
       <input type="text" value="{{location}}" class="form-control" id="location" placeholder="ex: Camp Sequoyah">
     </div>
-    <div class="col-xs-3">
-      <label for="date">Date Ordeal Begins</label>
-      <input type="date" format="yyyy/MM/dd" value="{{date}}" class="form-control" id="date" placeholder="ex: 10/03/2015">
-    </div>
-    <div class="col-xs-3">
-      <label for="time">Time Ordeal Begins</label>
-      <input type="text" value="{{time}}" class="form-control" id="time" placeholder="ex: 05:00PM">
+    <div class="col-xs-4">
+      <label for="date">Ordeal Begins</label>
+      <input type="text" value="{{date}}" class="form-control" id="date" placeholder="ex: 10/03/2015">
     </div>
   </div>
   <hr>
@@ -171,7 +167,7 @@
     </div>
   </div>
   <div id="lateArrivals">
-    {{#each lateArrivals}}
+    {{#each sortedLateArrivals lateArrivals}}
     <div class="row">
       <div class="col-xs-6">
         <label for="lateArrivalName">Name</label>
@@ -179,7 +175,7 @@
       </div>
       <div class="col-xs-6">
         <label for="lateArrivalETA">ETA</label>
-        <input type="time" value="{{eta}}" class="form-control" name="lateArrivalETA" placeholder="ETA">
+        <input type="text" value="{{formattedTime eta}}" class="form-control" name="lateArrivalETA" placeholder="ETA">
       </div>
     </div>
     {{/each}}
