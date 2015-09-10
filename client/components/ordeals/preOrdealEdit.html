@@ -12,21 +12,20 @@
     </div>
     <hr>
     <div class="row">
-      <div class="col-xs-3">
+      <div class="col-xs-4">
         <label for="name">Name</label>
         <input type="text" value="{{name}}" class="form-control" id="name" placeholder="ex: Spring Ordeal 2015">
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-4">
         <label for="location">Location</label>
         <input type="text" value="{{location}}" class="form-control" id="location" placeholder="ex: Camp Sequoyah">
       </div>
-      <div class="col-xs-3">
-        <label for="datetime">Date Ordeal Begins</label>
-        <input type="date" value="{{date}}" class="form-control" id="date" placeholder="ex: 10/03/2015">
-      </div>
-      <div class="col-xs-3">
-        <label for="time">Time Ordeal Begins</label>
-        <input type="time" value="{{time}}" class="form-control" id="time" placeholder="ex: 05:00PM">
+      <div class="col-xs-4">
+        <label for="datetime">Ordeal Begins</label>
+        <div class="input-group datetimepicker">
+          <input class="set-due-date form-control" type="text" value="{{date}}" id="date" placeholder="ex: 10/03/2015 06:00 PM"/>
+          <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+        </div>
       </div>
     </div>
     <hr>
@@ -183,7 +182,10 @@
         </div>
         <div class="col-xs-6">
           <label for="lateArrivalETA">ETA</label>
-          <input type="time" value="{{eta}}" class="form-control" name="lateArrivalETA" placeholder="ETA">
+          <div class="input-group datetimepicker">
+            <input class="set-due-date form-control" type="text" value="{{formattedTime eta}}" name="lateArrivalETA" placeholder="ETA"/>
+            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+          </div>
         </div>
       </div>
       {{/each}}

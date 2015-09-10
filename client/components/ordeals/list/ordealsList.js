@@ -13,11 +13,6 @@ Template.ordealsList.helpers({
     } else {
       return false;
     }
-  },
-  dateFormatter: function(formatDate) {
-    if(formatDate) {
-      return moment(formatDate).format('MM/DD/YYYY');
-    }
   }
 });
 
