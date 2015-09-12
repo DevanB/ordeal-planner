@@ -1,26 +1,26 @@
 <template name="preOrdealEdit">
-  <form>
+  <form actio>
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-sm-6">
         <label for="vcInductions">Vice-Chief of Inductions</label>
         <input type="text" value="{{vcInductions}}" class="form-control" id="vcInductions" placeholder="Vice-Chief of Inductions">
       </div>
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-sm-6">
         <label for="vcInductionsAdviser">Vice-Chief of Inductions Adviser</label>
         <input type="text" value="{{vcInductionsAdviser}}" class="form-control" id="vcInductionsAdviser" placeholder="Vice-Chief of Inductions Adviser">
       </div>
     </div>
     <hr>
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="name">Name</label>
         <input type="text" value="{{name}}" class="form-control" id="name" placeholder="ex: Spring Ordeal 2015">
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="location">Location</label>
         <input type="text" value="{{location}}" class="form-control" id="location" placeholder="ex: Camp Sequoyah">
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="datetime">Ordeal Begins</label>
         <div class="input-group datetimepicker">
           <input class="set-due-date form-control" type="text" value="{{date}}" id="date" placeholder="ex: 10/03/2015 06:00 PM"/>
@@ -30,54 +30,66 @@
     </div>
     <hr>
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="lodgeChief">Lodge Chief</label>
         <input type="text" value="{{lodgeChief}}" class="form-control" id="lodgeChief" placeholder="Lodge Chief">
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="lodgeAdviser">Lodge Adviser</label>
         <input type="text" value="{{lodgeAdviser}}" class="form-control" id="lodgeAdviser" placeholder="Lodge Adviser">
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="lodgeStaffAdviser">Lodge Staff Adviser</label>
         <input type="text" value="{{lodgeStaffAdviser}}" class="form-control" id="lodgeStaffAdviser" placeholder="Lodge Staff Adviser">
       </div>
     </div>
     <hr>
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="candidatesPreRegistered">Candidates Pre-Registered</label>
         <input type="number" value="{{candidatesPreRegistered}}" class="form-control" id="candidatesPreRegistered" placeholder="Candidates Pre-Registered">
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="candidatesAnticipated">Candidates Anticipated</label>
         <input type="number" value="{{candidatesAnticipated}}" class="form-control" id="candidatesAnticipated" placeholder="Candidates Anticipated">
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="membersAnticipated">Members Anticipated</label>
         <input type="number" value="{{membersAnticipated}}" class="form-control" id="membersAnticipated" placeholder="Members Anticipated">
       </div>
     </div>
     <hr>
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-sm-6">
         <div class="form-group">
           <label for="medic">Medic</label>
           <input type="text" value="{{medic}}" class="form-control" id="medic" placeholder="Medic">
         </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
         <div class="form-group">
           <label for="interfaithServiceLeader">Interfaith Service Leader</label>
           <input type="text" value="{{interfaithServiceLeader}}" class="form-control" id="interfaithServiceLeader" placeholder="Interfaith Service Leader">
         </div>
       </div>
-      <div class="col-xs-6">
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
         <div class="form-group">
           <label for="brotherhoodChairman">Brotherhood Chairman</label>
           <input type="text" value="{{brotherhoodChairman}}" class="form-control" id="brotherhoodChairman" placeholder="Brotherhood Chairman">
         </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
         <div class="form-group">
-          <label for="specialNeedsClan">Special Needs Clan - ex: Goat</label>
+          <label for="specialNeedsClan">Special Needs Clan</label>
           <input type="text" value="{{specialNeedsClan}}" class="form-control" id="specialNeedsClan" placeholder="ex: Goat">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="form-group">
+          <label for="lateArrivalClan">Late Arrival Clan</label>
+          <input type="text" value="{{lateArrivalClan}}" class="form-control" id="lateArrivalClan" placeholder="ex: Falcon">
         </div>
       </div>
     </div>

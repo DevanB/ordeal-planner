@@ -31,7 +31,8 @@ Template.preOrdealEdit.events({
   },
   'click #addLateArrivalBtn': function(e) {
     e.preventDefault();
-    $('#lateArrivals').append('<div class="row"><div class="col-xs-6"><label for="lateArrivalName">Name</label><input type="text" class="form-control" name="lateArrivalName" placeholder="Name"></div><div class="col-xs-6"><label for="lateArrivalETA">ETA</label><input type="time" class="form-control" name="lateArrivalETA" placeholder="ETA"></div></div>');
+    $('#lateArrivals').append('<div class="row"><div class="col-xs-6"><label for="lateArrivalName">Name</label><input type="text" class="form-control" name="lateArrivalName" placeholder="Name"></div><div class="col-xs-6"><label for="lateArrivalETA">ETA</label><div class="input-group datetimepicker"><input class="set-due-date form-control" type="text" name="lateArrivalETA" placeholder="ETA"/><span class="input-group-addon"><i class="fa fa-calendar"></i></span></div></div></div>');
+    $('.datetimepicker').datetimepicker();
   },
   'submit form': function(e) {
     e.preventDefault();
@@ -94,6 +95,7 @@ Template.preOrdealEdit.events({
       interfaithServiceLeader: e.target.interfaithServiceLeader.value,
       brotherhoodChairman: e.target.brotherhoodChairman.value,
       specialNeedsClan: e.target.specialNeedsClan.value,
+      lateArrivalClan: e.target.lateArrivalClan.value,
 
       preOrdealTeams: preOrdealTeams,
       ordealTeams: ordealTeams,
