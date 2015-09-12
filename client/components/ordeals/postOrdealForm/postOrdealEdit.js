@@ -95,7 +95,11 @@ Template.postOrdealEdit.events({
       ordealTeams: ordealTeams,
       brotherhoodTeams: brotherhoodTeams,
       ordealMasters: ordealMasters,
-      clans: clans
+      clans: clans,
+      roses: e.target.roses,
+      thorns: e.target.thorns,
+      adviserComments: e.target.adviserComments,
+      additionalComments: e.target.additionalComments
     };
 
     Meteor.call('postOrdealUpdate', ordealId, ordeal, function(error, response){
