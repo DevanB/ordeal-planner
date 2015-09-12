@@ -1,34 +1,30 @@
 <template name="postOrdealEdit">
   <form>
     <div class="row">
-      <div class="col-xs-3">
+      <div class="col-xs-12 col-sm-4">
         <label for="name">Name</label>
-        <input type="text" value="{{name}}" class="form-control" id="name" placeholder="ex: Spring Ordeal 2015">
+        <input disabled type="text" value="{{name}}" class="form-control" id="name" placeholder="ex: Spring Ordeal 2015">
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-12 col-sm-4">
         <label for="location">Location</label>
-        <input type="text" value="{{location}}" class="form-control" id="location" placeholder="ex: Camp Sequoyah">
+        <input disabled type="text" value="{{location}}" class="form-control" id="location" placeholder="ex: Camp Sequoyah">
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-12 col-sm-4">
         <label for="date">Date Ordeal Begins</label>
-        <input type="date" format="yyyy/MM/dd" value="{{date}}" class="form-control" id="date" placeholder="ex: 10/03/2015">
-      </div>
-      <div class="col-xs-3">
-        <label for="time">Time Ordeal Begins</label>
-        <input type="text" value="{{time}}" class="form-control" id="time" placeholder="ex: 05:00PM">
+        <input disabled type="text" value="{{date}}" class="form-control" id="date" placeholder="ex: 10/03/2015">
       </div>
     </div>
     <hr>
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="candidates">Candidates</label>
         <input type="number" value="{{candidates}}" class="form-control" id="candidates" placeholder="Candidates Attended">
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="brotherhoods">Brotherhoods Converted</label>
         <input type="number" value="{{brotherhoods}}" class="form-control" id="brotherhoods" placeholder="Brotherhoods Converted">
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4">
         <label for="members">Members</label>
         <input type="number" value="{{members}}" class="form-control" id="members" placeholder="Members Attended">
       </div>
@@ -48,15 +44,15 @@
     <div id="preOrdealTeams">
       {{#each preOrdealTeams}}
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4">
           <label for="preOrdealTeamChapter">Chapter</label>
           <input type="text" value="{{chapter}}" class="form-control" name="preOrdealTeamChapter" placeholder="Chapter">
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4">
           <label for="preOrdealTeamETA">ETA</label>
           <input type="time" value="{{eta}}" class="form-control" name="preOrdealTeamETA" placeholder="ETA">
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4">
           <label for="preOrdealTeamPerformed">
             Performed
             <input type="checkbox" class="form-control" name="preOrdealTeamPerformed" checked="{{performed}}">
@@ -75,15 +71,15 @@
     <div id="ordealTeams">
       {{#each ordealTeams}}
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4">
           <label for="ordealTeamChapter">Chapter</label>
           <input type="text" value="{{chapter}}" class="form-control" name="ordealTeamChapter" placeholder="Chapter">
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4">
           <label for="ordealTeamETA">ETA</label>
-          <input type="time" value={{eta}} class="form-control" name="ordealTeamETA" placeholder="ETA">
+          <input type="time" value="{{eta}}" class="form-control" name="ordealTeamETA" placeholder="ETA">
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4">
           <label for="ordealTeamPerformed">
             Performed
             <input type="checkbox" class="form-control" name="ordealTeamPerformed" checked="{{performed}}">
@@ -102,15 +98,15 @@
     <div id="brotherhoodTeams">
       {{#each brotherhoodTeams}}
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4">
           <label for="brotherhoodTeamChapter">Chapter</label>
           <input type="text" value="{{chapter}}" class="form-control" name="brotherhoodTeamChapter" placeholder="Chapter">
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4">
           <label for="brotherhoodTeamETA">ETA</label>
           <input type="time" value="{{eta}}" class="form-control" name="brotherhoodTeamETA" placeholder="ETA">
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4">
           <label for="brotherhoodTeamPerformed">
             Performed
             <input type="checkbox" class="form-control" name="brotherhoodTeamPerformed" checked="{{performed}}">
@@ -135,7 +131,7 @@
         </div>
         <div class="col-xs-6">
           <label for="ordealMasterRating">Rating</label>
-          {{> starsRating data-rating="{{rating}}" id="ordealMasterRating" class="awesome" size=20 mutable=true}}
+          <input type="text" value="{{rating}}" class="form-control" name="ordealMasterRating" placeholder="Rating">
         </div>
       </div>
       {{/each}}
@@ -150,6 +146,24 @@
     <div id="clans">
       {{#each clans}}
       <div class="row">
+        <div class="col-xs-12 col-sm-3">
+          <label for="clanName">Name</label>
+          <input type="text" value="{{name}}" class="form-control" name="clanName" placeholder="Name">
+        </div>
+        <div class="col-xs-12 col-sm-3">
+          <label for="elangomat">Elangomat</label>
+          <input type="text" value="{{elangomat}}" class="form-control" name="elangomat" placeholder="Elangomat Name">
+        </div>
+        <div class="col-xs-12 col-sm-3">
+          <label for="numberOfCandidates">Candidates</label>
+          <input type="text" value="{{numberOfCandidates}}" class="form-control" name="numberOfCandidates" placeholder="Number of Candidates">
+        </div>
+        <div class="col-xs-12 col-sm-3">
+          <label for="poorElangomat">
+            Poor Elangomat
+            <input type="checkbox" class="form-control" name="poorElangomat" checked="{{poorElangomat}}">
+          </label>
+        </div>
       </div>
       {{/each}}
     </div>
@@ -163,7 +177,7 @@
     <hr>
     <div class="row">
       <div class="col-xs-12">
-        <label for="thorns">Thorn</label>
+        <label for="thorns">Thorns</label>
         <textarea value="{{thorns}}" class="form-control" id="thorns" placeholder="Thorns"></textarea>
       </div>
     </div>
@@ -191,10 +205,3 @@
     </div>
   </form>
 </template>
-
-<!--
-  Roses: String
-  Thorns: String
-  AdditionalComments: String
-  AdviserComments:String
- -->
