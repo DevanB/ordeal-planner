@@ -189,14 +189,12 @@
       </div>
     </div>
     <hr>
-    {{#if isInRole 'admin'}}
     <div class="row">
       <div class="col-xs-12">
         <label for="adviserComments">Adviser Comments</label>
-        <textarea value="{{adviserComments}}" class="form-control" id="adviserComments" placeholder="Adviser Comments"></textarea>
+        <textarea value="{{adviserComments}}" {{adviser}} class="form-control" id="adviserComments" placeholder="Adviser Comments"></textarea>
       </div>
     </div>
-    {{/if}}
     <hr>
     <div class="row">
       <div class="col-xs-12">

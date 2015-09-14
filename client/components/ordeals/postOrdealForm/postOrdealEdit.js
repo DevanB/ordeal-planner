@@ -2,6 +2,14 @@ Template.postOrdealEdit.onRendered(function(){
   $('.datetimepicker').datetimepicker();
 });
 
+Template.postOrdealEdit.helpers({
+  adviser: function() {
+    if (Roles.userIsInRole(Meteor.user(), ['admin'])) {
+      return "not-disabled";
+    } else { return "disabled"; }
+  }
+});
+
 Template.postOrdealEdit.events({
   'click #addPreOrdealTeamBtn': function(e) {
     e.preventDefault();
