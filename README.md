@@ -17,6 +17,21 @@ App Description
 - SSR - `meteor add meteorhacks:ssr`
 - Underscore - `meteor add underscore`
 
+- Sass/SCSS - `meteor add fourseven:scss`
+- Meteor Toys - `meteor add meteortoys:allthings`
+- FontAwesome - `meteor add fortawesome:fontawesome`
+- Check Checker - `meteor add east5th:check-checker`
+- Roles - `meteor add alanning:roles`
+- Stars Rating - `meteor add barbatus:stars-rating`
+- MomentJS - `meteor add momentjs:moment`
+- Bootstrap Datetime Picker - `meteor add tsega:bootstrap3-datetimepicker`
+- ReactiveDict  -`meteor add reactive-dict`
+- Bootstrap Tags Picker - `meteor add ajduke:bootstrap-tagsinput@=0.5.0`
+- Kadira `meteor add meteorhacks:kadira`
+
+### Setup/Installation
+Notes on application setup/installation
+
 ### Functionality
 
 ##### User Accounts
