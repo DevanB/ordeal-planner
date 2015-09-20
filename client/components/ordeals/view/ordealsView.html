@@ -29,58 +29,70 @@
       <strong>Brotherhood Chairman</strong>: {{brotherhoodChairman}}<br/>
       <strong>Special Needs Clan</strong>: {{specialNeedsClan}}<br/>
       <strong>Late Arrival Clan</strong>: {{lateArrivalClan}}<br/><br/>
-    </div>
-    <div class="col-xs-12 col-sm-6">
-      {{#if preOrdealTeams}}
-        <h4>Pre-Ordeal Teams</h4>
-        {{#each preOrdealTeams}}
-          <strong>Chapter</strong>: {{chapter}}
-          <strong>ETA</strong>: {{eta}}
-          <strong>Performed</strong>: {{performed}}<br/>
-        {{/each}}<br/><br/>
-      {{/if}}
-
-      {{#if ordealTeams}}
-        <h4>Ordeal Teams</h4>
-        {{#each ordealTeams}}
-          <strong>Chapter</strong>: {{chapter}}
-          <strong>ETA</strong>: {{eta}}
-          <strong>Performed</strong>: {{performed}}<br/>
-        {{/each}}<br/><br/>
-      {{/if}}
-
-      {{#if brotherhoodTeams}}
-        <h4>Brotherhood Teams</h4>
-        {{#each brotherhoodTeams}}
-          <strong>Chapter</strong>: {{chapter}}
-          <strong>ETA</strong>: {{eta}}
-          <strong>Performed</strong>: {{performed}}<br/>
-        {{/each}}<br/><br/>
-      {{/if}}
 
       {{#if ordealMasters}}
         <h4>Ordeal Masters</h4>
         {{#each ordealMasters}}
-          <strong>Name</strong>: {{name}}
-          <strong>Rating</strong>: {{rating}}<br/>
-        {{/each}}<br/><br/>
+        <p>
+          <strong>Name</strong>: {{name}}<br/>
+          <strong>Rating</strong>: {{rating}}
+        </p>
+        {{/each}}<br/>
       {{/if}}
 
       {{#if lateArrivals}}
         <h4>Late Arrivals</h4>
         {{#each sortedLateArrivals lateArrivals}}
-          <strong>Name</strong>: {{name}}
+        <p>
+          <strong>Name</strong>: {{name}}<br/>
+          <strong>ETA</strong>: {{eta}}
+        </p>
+        {{/each}}<br/>
+      {{/if}}
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      {{#if preOrdealTeams}}
+        <h4>Pre-Ordeal Teams</h4>
+        {{#each preOrdealTeams}}
+        <p>
+          <strong>Chapter</strong>: {{chapter}}<br/>
           <strong>ETA</strong>: {{eta}}<br/>
-        {{/each}}<br/><br/>
+          <strong>Performed</strong>: {{performed}}
+        </p>
+        {{/each}}<br/>
+      {{/if}}
+
+      {{#if ordealTeams}}
+        <h4>Ordeal Teams</h4>
+        {{#each ordealTeams}}
+        <p>
+          <strong>Chapter</strong>: {{chapter}}<br/>
+          <strong>ETA</strong>: {{eta}}<br/>
+          <strong>Performed</strong>: {{performed}}
+        </p>
+        {{/each}}<br/>
+      {{/if}}
+
+      {{#if brotherhoodTeams}}
+        <h4>Brotherhood Teams</h4>
+        {{#each brotherhoodTeams}}
+        <p>
+          <strong>Chapter</strong>: {{chapter}}<br/>
+          <strong>ETA</strong>: {{eta}}<br/>
+          <strong>Performed</strong>: {{performed}}
+        </p>
+        {{/each}}<br/>
       {{/if}}
 
       {{#if clans}}
         <h4>Clans</h4>
         {{#each clans}}
-          <strong>Name</strong>: {{name}}
-          <strong>Elangomat</strong>: {{elangomat}}
-          <strong>Candidates</strong>: {{numberOfCandidates}}
-          <strong>Poor Elangomat</strong>: {{poorElangomat}}<br/>
+        <p>
+          <strong>Name</strong>: {{name}}<br/>
+          <strong>Elangomat</strong>: {{elangomat}}<br/>
+          <strong>Candidates</strong>: {{numberOfCandidates}}<br/>
+          <strong>Poor Elangomat</strong>: {{poorElangomat}}
+        </p>
         {{/each}}
       {{/if}}
     </div>
