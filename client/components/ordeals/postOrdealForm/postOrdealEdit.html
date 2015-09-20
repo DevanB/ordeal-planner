@@ -44,19 +44,26 @@
     <div id="preOrdealTeams">
       {{#each preOrdealTeams}}
       <div class="row">
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-5">
           <label for="preOrdealTeamChapter">Chapter</label>
           <input type="text" value="{{chapter}}" class="form-control" name="preOrdealTeamChapter" placeholder="Chapter">
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-5">
           <label for="preOrdealTeamETA">ETA</label>
-          <input type="time" value="{{eta}}" class="form-control" name="preOrdealTeamETA" placeholder="ETA">
+          <div class="input-group datetimepicker">
+            <input class="set-due-date form-control" type="text" value="{{eta}}" name="preOrdealTeamETA" placeholder="ETA"/>
+            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-6 col-sm-1">
           <label for="preOrdealTeamPerformed">
             Performed
             <input type="checkbox" class="form-control" name="preOrdealTeamPerformed" checked="{{performed}}">
           </label>
+        </div>
+        <div class="col-xs-6 col-sm-1">
+          <label for="removeBtn">&nbsp;</label><br/>
+          <a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a>
         </div>
       </div>
       {{/each}}
@@ -71,19 +78,26 @@
     <div id="ordealTeams">
       {{#each ordealTeams}}
       <div class="row">
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-5">
           <label for="ordealTeamChapter">Chapter</label>
           <input type="text" value="{{chapter}}" class="form-control" name="ordealTeamChapter" placeholder="Chapter">
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-5">
           <label for="ordealTeamETA">ETA</label>
-          <input type="time" value="{{eta}}" class="form-control" name="ordealTeamETA" placeholder="ETA">
+          <div class="input-group datetimepicker">
+            <input class="set-due-date form-control" type="text" value="{{eta}}" name="ordealTeamETA" placeholder="ETA"/>
+            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-6 col-sm-1">
           <label for="ordealTeamPerformed">
             Performed
             <input type="checkbox" class="form-control" name="ordealTeamPerformed" checked="{{performed}}">
           </label>
+        </div>
+        <div class="col-xs-6 col-sm-1">
+          <label for="removeBtn">&nbsp;</label><br/>
+          <a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a>
         </div>
       </div>
       {{/each}}
@@ -98,19 +112,26 @@
     <div id="brotherhoodTeams">
       {{#each brotherhoodTeams}}
       <div class="row">
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-5">
           <label for="brotherhoodTeamChapter">Chapter</label>
           <input type="text" value="{{chapter}}" class="form-control" name="brotherhoodTeamChapter" placeholder="Chapter">
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-5">
           <label for="brotherhoodTeamETA">ETA</label>
-          <input type="time" value="{{eta}}" class="form-control" name="brotherhoodTeamETA" placeholder="ETA">
+          <div class="input-group datetimepicker">
+            <input class="set-due-date form-control" type="text" value="{{eta}}" name="brotherhoodTeamETA" placeholder="ETA"/>
+            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-6 col-sm-1">
           <label for="brotherhoodTeamPerformed">
             Performed
             <input type="checkbox" class="form-control" name="brotherhoodTeamPerformed" checked="{{performed}}">
           </label>
+        </div>
+        <div class="col-xs-6 col-sm-1">
+          <label for="removeBtn">&nbsp;</label><br/>
+          <a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a>
         </div>
       </div>
       {{/each}}
@@ -129,9 +150,13 @@
           <label for="ordealMasterName">Name</label>
           <input type="text" value="{{name}}" class="form-control" name="ordealMasterName" placeholder="Name">
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-5">
           <label for="ordealMasterRating">Rating</label>
           <input type="text" value="{{rating}}" class="form-control" name="ordealMasterRating" placeholder="Rating">
+        </div>
+        <div class="col-xs-1">
+          <label for="removeBtn">&nbsp;</label><br/>
+          <a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a>
         </div>
       </div>
       {{/each}}
@@ -158,11 +183,15 @@
           <label for="numberOfCandidates">Candidates</label>
           <input type="text" value="{{numberOfCandidates}}" class="form-control" name="numberOfCandidates" placeholder="Number of Candidates">
         </div>
-        <div class="col-xs-12 col-sm-3">
+        <div class="col-xs-6 col-sm-2">
           <label for="poorElangomat">
             Poor Elangomat
             <input type="checkbox" class="form-control" name="poorElangomat" checked="{{poorElangomat}}">
           </label>
+        </div>
+        <div class="col-xs-6 col-sm-1">
+          <label for="removeBtn">&nbsp;</label><br/>
+          <a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a>
         </div>
       </div>
       {{/each}}

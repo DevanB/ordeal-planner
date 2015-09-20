@@ -112,9 +112,16 @@
           <label for="preOrdealTeamChapter">Chapter</label>
           <input type="text" value="{{chapter}}" class="form-control" name="preOrdealTeamChapter" placeholder="Chapter">
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-5">
           <label for="preOrdealTeamETA">ETA</label>
-          <input type="time" value="{{eta}}" class="form-control" name="preOrdealTeamETA" placeholder="ETA">
+          <div class="input-group datetimepicker">
+            <input class="set-due-date form-control" type="text" value="{{eta}}" name="preOrdealTeamETA" placeholder="ETA"/>
+            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+          </div>
+        </div>
+        <div class="col-xs-1">
+          <label for="removeBtn">&nbsp;</label><br/>
+          <a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a>
         </div>
       </div>
       {{/each}}
@@ -133,9 +140,16 @@
           <label for="ordealTeamChapter">Chapter</label>
           <input type="text" value="{{chapter}}" class="form-control" name="ordealTeamChapter" placeholder="Chapter">
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-5">
           <label for="ordealTeamETA">ETA</label>
-          <input type="time" value="{{eta}}" class="form-control" name="ordealTeamETA" placeholder="ETA">
+          <div class="input-group datetimepicker">
+            <input class="set-due-date form-control" type="text" value="{{eta}}" name="ordealTeamETA" placeholder="ETA"/>
+            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+          </div>
+        </div>
+        <div class="col-xs-1">
+          <label for="removeBtn">&nbsp;</label><br/>
+          <a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a>
         </div>
       </div>
       {{/each}}
@@ -154,9 +168,16 @@
           <label for="brotherhoodTeamChapter">Chapter</label>
           <input type="text" value="{{chapter}}" class="form-control" name="brotherhoodTeamChapter" placeholder="Chapter">
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-5">
           <label for="brotherhoodTeamETA">ETA</label>
-          <input type="time" value="{{eta}}" class="form-control" name="brotherhoodTeamETA" placeholder="ETA">
+          <div class="input-group datetimepicker">
+            <input class="set-due-date form-control" type="text" value="{{eta}}" name="brotherhoodTeamETA" placeholder="ETA"/>
+            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+          </div>
+        </div>
+        <div class="col-xs-1">
+          <label for="removeBtn">&nbsp;</label><br/>
+          <a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a>
         </div>
       </div>
       {{/each}}
@@ -171,9 +192,13 @@
     <div id="ordealMasters">
       {{#each ordealMasters}}
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-11">
           <label for="ordealMasterName">Name</label>
           <input type="text" value="{{name}}" class="form-control" name="ordealMasterName" placeholder="Name">
+        </div>
+        <div class="col-xs-1">
+          <label for="removeBtn">&nbsp;</label><br/>
+          <a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a>
         </div>
       </div>
       {{/each}}
@@ -192,12 +217,16 @@
           <label for="lateArrivalName">Name</label>
           <input type="text" value="{{name}}" class="form-control" name="lateArrivalName" placeholder="Name">
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-5">
           <label for="lateArrivalETA">ETA</label>
           <div class="input-group datetimepicker">
             <input class="set-due-date form-control" type="text" value="{{eta}}" name="lateArrivalETA" placeholder="ETA"/>
             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
           </div>
+        </div>
+        <div class="col-xs-1">
+          <label for="removeBtn">&nbsp;</label><br/>
+          <a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a>
         </div>
       </div>
       {{/each}}

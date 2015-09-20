@@ -15,24 +15,31 @@ Template.preOrdealEdit.helpers({
 Template.preOrdealEdit.events({
   'click #addPreOrdealTeamBtn': function(e) {
     e.preventDefault();
-    $('#preOrdealTeams').append('<div class="row"><div class="col-xs-6"><label for="preOrdealTeamChapter">Chapter</label><input type="text" class="form-control" name="preOrdealTeamChapter" placeholder="Chapter"></div><div class="col-xs-6"><label for="preOrdealTeamETA">ETA</label><input type="time" class="form-control" name="preOrdealTeamETA" placeholder="ETA"></div></div>');
+    $('#preOrdealTeams').append('<div class="row"><div class="col-xs-6"><label for="preOrdealTeamChapter">Chapter</label><input type="text" class="form-control" name="preOrdealTeamChapter" placeholder="Chapter"></div><div class="col-xs-5"><label for="preOrdealTeamETA">ETA</label><div class="input-group datetimepicker"><input class="set-due-date form-control" type="text" name="preOrdealTeamETA" placeholder="ETA"/><span class="input-group-addon"><i class="fa fa-calendar"></i></span></div></div><div class="col-xs-1"><label for="removeBtn">&nbsp;</label><br/><a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a></div></div>');
+    $('.datetimepicker').datetimepicker();
   },
   'click #addOrdealTeamBtn': function(e) {
     e.preventDefault();
-    $('#ordealTeams').append('<div class="row"><div class="col-xs-6"><label for="ordealTeamChapter">Chapter</label><input type="text" class="form-control" name="ordealTeamChapter" placeholder="Chapter"></div><div class="col-xs-6"><label for="ordealTeamETA">ETA</label><input type="time" class="form-control" name="ordealTeamETA" placeholder="ETA"></div></div>');
+    $('#ordealTeams').append('<div class="row"><div class="col-xs-6"><label for="ordealTeamChapter">Chapter</label><input type="text" class="form-control" name="ordealTeamChapter" placeholder="Chapter"></div><div class="col-xs-5"><label for="ordealTeamETA">ETA</label><div class="input-group datetimepicker"><input class="set-due-date form-control" type="text" name="ordealTeamETA" placeholder="ETA"/><span class="input-group-addon"><i class="fa fa-calendar"></i></span></div></div><div class="col-xs-1"><label for="removeBtn">&nbsp;</label><br/><a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a></div></div>');
+    $('.datetimepicker').datetimepicker();
   },
   'click #addBrotherhoodTeamBtn': function(e) {
     e.preventDefault();
-    $('#brotherhoodTeams').append('<div class="row"><div class="col-xs-6"><label for="brotherhoodTeamChapter">Chapter</label><input type="text" class="form-control" name="brotherhoodTeamChapter" placeholder="Chapter"></div><div class="col-xs-6"><label for="brotherhoodTeamETA">ETA</label><input type="time" class="form-control" name="brotherhoodTeamETA" placeholder="ETA"></div></div>');
+    $('#brotherhoodTeams').append('<div class="row"><div class="col-xs-6"><label for="brotherhoodTeamChapter">Chapter</label><input type="text" class="form-control" name="brotherhoodTeamChapter" placeholder="Chapter"/></div><div class="col-xs-5"><label for="brotherhoodTeamETA">ETA</label><div class="input-group datetimepicker"><input class="set-due-date form-control" type="text" name="brotherhoodTeamETA" placeholder="ETA"/><span class="input-group-addon"><i class="fa fa-calendar"></i></span></div></div><div class="col-xs-1"><label for="removeBtn">&nbsp;</label><br/><a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a></div></div>');
+    $('.datetimepicker').datetimepicker();
   },
   'click #addOrdealMasterBtn': function(e) {
     e.preventDefault();
-    $('#ordealMasters').append('<div class="row"><div class="col-xs-12"><label for="ordealMasterName">Name</label><input type="text" class="form-control" name="ordealMasterName" placeholder="Name"></div></div>');
+    $('#ordealMasters').append('<div class="row"><div class="col-xs-11"><label for="ordealMasterName">Name</label><input type="text" class="form-control" name="ordealMasterName" placeholder="Name"></div><div class="col-xs-1"><label for="removeBtn">&nbsp;</label><br/><a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a></div></div>');
   },
   'click #addLateArrivalBtn': function(e) {
     e.preventDefault();
-    $('#lateArrivals').append('<div class="row"><div class="col-xs-6"><label for="lateArrivalName">Name</label><input type="text" class="form-control" name="lateArrivalName" placeholder="Name"></div><div class="col-xs-6"><label for="lateArrivalETA">ETA</label><div class="input-group datetimepicker"><input class="set-due-date form-control" type="text" name="lateArrivalETA" placeholder="ETA"/><span class="input-group-addon"><i class="fa fa-calendar"></i></span></div></div></div>');
+    $('#lateArrivals').append('<div class="row"><div class="col-xs-6"><label for="lateArrivalName">Name</label><input type="text" class="form-control" name="lateArrivalName" placeholder="Name"/></div><div class="col-xs-5"><label for="lateArrivalETA">ETA</label><div class="input-group datetimepicker"><input class="set-due-date form-control" type="text" name="lateArrivalETA" placeholder="ETA"/><span class="input-group-addon"><i class="fa fa-calendar"></i></span></div></div><div class="col-xs-1"><label for="removeBtn">&nbsp;</label><br/><a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a></div></div>');
     $('.datetimepicker').datetimepicker();
+  },
+  'click .removeBtn': function(e) {
+    e.preventDefault();
+    $(e.target).closest(".row").remove();
   },
   'submit form': function(e) {
     e.preventDefault();
