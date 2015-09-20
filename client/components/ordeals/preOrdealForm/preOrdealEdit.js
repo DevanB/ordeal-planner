@@ -5,10 +5,6 @@ Template.preOrdealEdit.onRendered(function() {
 Template.preOrdealEdit.helpers({
   sortedLateArrivals: function(lateArrivals) {
     return _.sortBy(lateArrivals, function(lateArrival) { return Date.parse(lateArrival.eta) });
-  },
-  formattedTime: function(formattedTime) {
-    date = Date.parse(formattedTime);
-    return moment(date).format("h:mm A");
   }
 });
 
