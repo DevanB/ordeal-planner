@@ -1,82 +1,97 @@
 <template name="ordealsView">
   {{#with ordeal}}
-    Vice-Chief of Inductions: {{vcInductions}}<br/>
-    Vice-Chief of Inductions Adviser: {{vcInductionsAdviser}}<br/>
+  <div class="row">
+    <div class="col-xs-12">
+      <h4>{{name}} – {{location}}</h4>
+      <h5>{{date}}</h5>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <strong>Vice-Chief of Inductions</strong>: {{vcInductions}}<br/>
+      <strong>Vice-Chief of Inductions Adviser</strong>: {{vcInductionsAdviser}}<br/><br/>
 
-    Name: {{name}}<br/>
-    Location: {{location}}<br/>
-    Ordeal Begins: {{date}}<br/>
+      <strong>Lodge Chief</strong>: {{lodgeChief}}<br/>
+      <strong>Lodge Adviser</strong>: {{lodgeAdviser}}<br/>
+      <strong>Lodge Staff Adviser</strong>: {{lodgeStaffAdviser}}<br/><br/>
 
-    Lodge Chief: {{lodgeChief}}<br/>
-    Lodge Adviser: {{lodgeAdviser}}<br/>
-    Lodge Staff Adviser: {{lodgeStaffAdviser}}<br/>
+      <strong>Candidates Pre-Registered</strong>: {{candidatesPreRegistered}}<br/>
+      <strong>Candidates Anticipated</strong>: {{candidatesAnticipated}}<br/>
+      <strong>Members Anticipated</strong>: {{membersAnticipated}}<br/><br/>
 
-    Candidates Pre-Registered: {{candidatesPreRegistered}}<br/>
-    Candidates Anticipated: {{candidatesAnticipated}}<br/>
-    Members Anticipated: {{membersAnticipated}}<br/>
+      <strong>Candidates Inducted</strong>: {{candidates}}<br/>
+      <strong>Brotherhoods Converted</strong>: {{brotherhoods}}<br/>
+      <strong>Members In Attendance</strong>: {{members}}<br/><br/>
 
-    Candidates: {{candidates}}<br/>
-    Brotherhoods Converted: {{brotherhoods}}<br/>
-    Members: {{members}}<br/>
+      <strong>Medic</strong>: {{medic}}<br/>
+      <strong>Interfaith Service Leader</strong>: {{interfaithServiceLeader}}<br/>
+      <strong>Brotherhood Chairman</strong>: {{brotherhoodChairman}}<br/>
+      <strong>Special Needs Clan</strong>: {{specialNeedsClan}}<br/>
+      <strong>Late Arrival Clan</strong>: {{lateArrivalClan}}<br/><br/>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      {{#if preOrdealTeams}}
+        <h4>Pre-Ordeal Teams</h4>
+        {{#each preOrdealTeams}}
+          <strong>Chapter</strong>: {{chapter}}
+          <strong>ETA</strong>: {{eta}}
+          <strong>Performed</strong>: {{performed}}<br/>
+        {{/each}}<br/><br/>
+      {{/if}}
 
-    Medic: {{medic}}<br/>
-    Interfaith Service Leader: {{interfaithServiceLeader}}<br/>
-    Brotherhood Chairman: {{brotherhoodChairman}}<br/>
-    Special Needs Clan: {{specialNeedsClan}}<br/>
-    Late Arrival Clan: {{lateArrivalClan}}<br/>
+      {{#if ordealTeams}}
+        <h4>Ordeal Teams</h4>
+        {{#each ordealTeams}}
+          <strong>Chapter</strong>: {{chapter}}
+          <strong>ETA</strong>: {{eta}}
+          <strong>Performed</strong>: {{performed}}<br/>
+        {{/each}}<br/><br/>
+      {{/if}}
 
+      {{#if brotherhoodTeams}}
+        <h4>Brotherhood Teams</h4>
+        {{#each brotherhoodTeams}}
+          <strong>Chapter</strong>: {{chapter}}
+          <strong>ETA</strong>: {{eta}}
+          <strong>Performed</strong>: {{performed}}<br/>
+        {{/each}}<br/><br/>
+      {{/if}}
 
-    <h4>Pre-Ordeal Teams</h4><br/>
+      {{#if ordealMasters}}
+        <h4>Ordeal Masters</h4>
+        {{#each ordealMasters}}
+          <strong>Name</strong>: {{name}}
+          <strong>Rating</strong>: {{rating}}<br/>
+        {{/each}}<br/><br/>
+      {{/if}}
 
-    {{#each preOrdealTeams}}
-      Chapter: {{chapter}}<br/>
-      ETA: {{eta}}<br/>
-      Performed: {{performed}}<br/>
-    {{/each}}
+      {{#if lateArrivals}}
+        <h4>Late Arrivals</h4>
+        {{#each sortedLateArrivals lateArrivals}}
+          <strong>Name</strong>: {{name}}
+          <strong>ETA</strong>: {{eta}}<br/>
+        {{/each}}<br/><br/>
+      {{/if}}
 
-
-    <h4>Ordeal Teams</h4><br/>
-
-    {{#each ordealTeams}}
-      Chapter: {{chapter}}<br/>
-      ETA: {{eta}}<br/>
-      Performed: {{performed}}<br/>
-    {{/each}}
-
-    <h4>Brotherhood Teams</h4><br/>
-
-    {{#each brotherhoodTeams}}
-      Chapter: {{chapter}}<br/>
-      ETA: {{eta}}<br/>
-      Performed: {{performed}}<br/>
-    {{/each}}
-
-    <h4>Ordeal Masters</h4><br/>
-
-    {{#each ordealMasters}}<br/>
-      Name: {{name}}<br/>
-      Rating: {{rating}}<br/>
-    {{/each}}
-
-    <h4>Late Arrivals</h4><br/>
-
-    {{#each sortedLateArrivals lateArrivals}}
-      Name: {{name}}<br/>
-      ETA: {{eta}}<br/>
-    {{/each}}
-
-    <h4>Clans</h4><br/>
-
-    {{#each clans}}
-      Name: {{name}}<br/>
-      Elangomat: {{elangomat}}<br/>
-      Candidates: {{numberOfCandidates}}<br/>
-      Poor Elangomat: {{poorElangomat}}<br/>
-    {{/each}}
-
-    Roses: {{roses}}<br/>
-    Thorns: {{thorns}}<br/>
-    Additional Comments: {{additionalComments}}<br/>
-    Adviser Comments: {{adviserComments}}<br/>
+      {{#if clans}}
+        <h4>Clans</h4>
+        {{#each clans}}
+          <strong>Name</strong>: {{name}}
+          <strong>Elangomat</strong>: {{elangomat}}
+          <strong>Candidates</strong>: {{numberOfCandidates}}
+          <strong>Poor Elangomat</strong>: {{poorElangomat}}<br/>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p><strong>Roses</strong>: {{roses}}</p>
+      <p><strong>Thorns</strong>: {{thorns}}</p>
+      <p><strong>Additional Comments</strong>: {{additionalComments}}</p>
+      <p><strong>Adviser Comments</strong>: {{adviserComments}}<br/></p>
+    </div>
+  </div>
   {{/with}}
 </template>
