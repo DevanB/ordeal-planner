@@ -6,7 +6,7 @@
 generateTestAccounts = function(){
   // Create an array of user accounts.
   var users = [
-    { name: "Devan Beitel", email: "devan@devanb.us", password: "password"}
+    { name: "Devan Beitel", email: "devan@devanb.us", password: "015418"}
   ]
 
   // Loop through array of user accounts.
