@@ -28,6 +28,8 @@ alanning:roles
 barbatus:stars-rating
 momentjs:moment
 tsega:bootstrap3-datetimepicker
-reactive-dict
 ajduke:bootstrap-tagsinput@=0.5.0
 meteorhacks:kadira
+reactive-var
+kadira:flow-router
+kadira:blaze-layout
