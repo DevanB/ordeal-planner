@@ -1,24 +1,61 @@
 Template.ordealsCreate.onRendered(function(){
   $('.datetimepicker').datetimepicker();
+  $('#createOrdealForm').validate({
+    rules: {
+      vcInductions: {
+        required: true
+      },
+      vcInductionsAdviser: {
+        required: true
+      },
+      name: {
+        required: true
+      },
+      location: {
+        required: true
+      },
+      date: {
+        required: true
+      }
+    },
+    messages: {
+      vcInductions: {
+        required: "Who is the current VC Inductions?",
+      },
+      vcInductionsAdviser: {
+        required: "Who is the current VC Inductions Adviser?",
+      },
+      name: {
+        required: "Please enter a name. Example: May Ordeal 2016",
+      },
+      location: {
+        required: "Where is this Ordeal happening?",
+      },
+      date: {
+        required: "When is this Ordeal beginning?",
+      }
+    },
+    submitHandler: function(){
+      var ordeal = {
+        name: $('[name="name"]').val(),
+        location: $('[name="location"]').val(),
+        date: $('[name="date"]').val(),
+        vcInductions: $('[name="vcInductions"]').val(),
+        vcInductionsAdviser: $('[name="vcInductionsAdviser"]').val(),
+      };
+
+      Meteor.call('createOrdeal', ordeal, function(error, response){
+        if (error) {
+          Bert.alert(error.reason, "danger");
+        } else {
+          FlowRouter.go("/ordeals/edit/" + response);
+        };
+      });
+    }
+  });
 });
 Template.ordealsCreate.events({
   'submit form': function(e) {
     e.preventDefault();
-
-    var ordeal = {
-      name: e.target.name.value,
-      location: e.target.location.value,
-      date: e.target.date.value,
-      vcInductions: e.target.vcInductions.value,
-      vcInductionsAdviser: e.target.vcInductionsAdviser.value
-    };
-
-    Meteor.call('createOrdeal', ordeal, function(error, response){
-      if (error) {
-        Bert.alert(error.reason, "danger");
-      } else {
-        Router.go("/");
-      };
-    });
   }
 });
