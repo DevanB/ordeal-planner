@@ -1,20 +1,3 @@
-/*
-* Controller: Reset Password
-* Template: /client/views/public/reset-password.html
-*/
-
-/*
-* Created
-*/
-
-Template.resetPassword.onCreated(function(){
-  // Code to run when template is created goes here.
-});
-
-/*
-* Rendered
-*/
-
 Template.resetPassword.onRendered(function(){
   $('#application-reset-password').validate({
     rules: {
@@ -40,7 +23,7 @@ Template.resetPassword.onRendered(function(){
     },
     submitHandler: function(){
       // Grab the user's reset token and new password.
-      var token    = Session.get('resetPasswordToken'),
+      var token    = FlowRouter.current().params.token,
           password = $('[name="newPassword"]').val();
 
       // Reset the user's password.
@@ -49,26 +32,11 @@ Template.resetPassword.onRendered(function(){
           Bert.alert(error.reason, 'danger');
         } else {
           Bert.alert('Password successfully reset!', 'success');
-          Session.set('resetPasswordToken', null);
         }
       });
     }
   });
 });
-
-/*
-* Helpers
-*/
-
-Template.resetPassword.helpers({
-  example: function(){
-    // Code to run for helper function.
-  }
-});
-
-/*
-* Events
-*/
 
 Template.resetPassword.events({
   'submit form': function(e){

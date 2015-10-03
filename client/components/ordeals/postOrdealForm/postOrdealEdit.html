@@ -152,7 +152,8 @@
         </div>
         <div class="col-xs-5">
           <label for="ordealMasterRating">Rating</label>
-          <input type="text" value="{{rating}}" class="form-control" name="ordealMasterRating" placeholder="Rating">
+          {{> starsRating rating=rating class="awesome" size=20 mutable=true}}
+          <input type="hidden" value="{{rating}}" name="ordealMasterRating">
         </div>
         <div class="col-xs-1">
           <label for="removeBtn">&nbsp;</label><br/>

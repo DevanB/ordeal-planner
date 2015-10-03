@@ -1,20 +1,3 @@
-/*
-* Controller: Signup
-* Template: /client/views/public/signup.html
-*/
-
-/*
-* Created
-*/
-
-Template.signup.onCreated(function(){
-  // Code to run when template is created goes here.
-});
-
-/*
-* Rendered
-*/
-
 Template.signup.onRendered(function(){
   $('#application-signup').validate({
     rules: {
@@ -56,23 +39,8 @@ Template.signup.onRendered(function(){
   });
 });
 
-/*
-* Helpers
-*/
-
-Template.signup.helpers({
-  example: function(){
-    // Code to run for helper function.
-  }
-});
-
-/*
-* Events
-*/
-
 Template.signup.events({
   'submit form': function(e){
-    // Prevent form from submitting.
     e.preventDefault();
   }
 });

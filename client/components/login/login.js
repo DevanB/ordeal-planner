@@ -1,20 +1,3 @@
-/*
-* Controller: Login
-* Template: /client/views/public/login.html
-*/
-
-/*
-* Created
-*/
-
-Template.login.onCreated(function(){
-  // Code to run when template is created goes here.
-});
-
-/*
-* Rendered
-*/
-
 Template.login.onRendered(function(){
   $('#application-login').validate({
     rules: {
@@ -53,20 +36,6 @@ Template.login.onRendered(function(){
     }
   });
 });
-
-/*
-* Helpers
-*/
-
-Template.login.helpers({
-  example: function(){
-    // Code to run for helper function.
-  }
-});
-
-/*
-* Events
-*/
 
 Template.login.events({
   'submit form': function(e){

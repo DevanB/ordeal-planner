@@ -1,7 +1,7 @@
 <template name="layout">
-	{{>bertAlert}}
-	{{>header}}
+	{{> bertAlert}}
+	{{> header}}
 	<div class="container">
-		{{>yield}}
+		{{> Template.dynamic template=content}}
 	</div>
 </template>

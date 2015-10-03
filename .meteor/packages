@@ -10,26 +10,26 @@ accounts-base
 jquery
 check
 audit-argument-checks
-iron:router
 themeteorchef:jquery-validation
 twbs:bootstrap
 browser-policy
-meteorhacks:npm
 
 
-npm-container
 themeteorchef:bert
 meteorhacks:ssr
-fourseven:scss
-meteortoys:allthings
 fortawesome:fontawesome
 east5th:check-checker
 alanning:roles
 barbatus:stars-rating
 momentjs:moment
 tsega:bootstrap3-datetimepicker
-ajduke:bootstrap-tagsinput@=0.5.0
 meteorhacks:kadira
 reactive-var
 kadira:flow-router
 kadira:blaze-layout
+standard-minifiers
+fourseven:scss
+ajduke:bootstrap-tagsinput
+ecmascript
+email
+meteortoys:allthings

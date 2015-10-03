@@ -1,6 +1,6 @@
 Template.ordealsView.onCreated(function(){
-  this.ordealId = new ReactiveVar(Router.current().params._id);
-  this.subscribe('ordeal', Router.current().params._id);
+  this.ordealId = new ReactiveVar(FlowRouter.getParam("_id"));
+  this.subscribe('ordeal', FlowRouter.getParam("_id"));
 });
 
 Template.ordealsView.helpers({

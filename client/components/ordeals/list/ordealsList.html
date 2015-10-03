@@ -1,7 +1,7 @@
 <template name="ordealsList">
   <div class="row">
     <h1>Ordeals</h1>
-    {{#if currentUser}}<a href="{{pathFor 'create-ordeal'}}" class="pull-right btn btn-sm btn-success"><i class="fa fa-plus"></i>&nbsp;Add Ordeal</a>{{/if}}
+    {{#if currentUser}}<a href="{{pathFor 'ordeals-create'}}" class="pull-right btn btn-sm btn-success"><i class="fa fa-plus"></i>&nbsp;Add Ordeal</a>{{/if}}
   </div>
 
   <div class="row">
@@ -23,22 +23,22 @@
           <td>
             {{#if isInRole 'admin'}}
               <div class="btn-group">
-                <a class="btn btn-sm btn-default" href="{{pathFor 'edit-ordeal'}}">Edit</a>
+                <a class="btn btn-sm btn-default" href="{{pathFor 'ordeals-edit' _id=_id}}">Edit</a>
                 <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="caret"></span>
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a href="{{pathFor 'view-ordeal'}}">View</a></li>
+                  <li><a href="{{pathFor 'ordeals-view' _id=_id}}">View</a></li>
                   <li><a href="#" class="deleteOrdealBtn">Delete</a></li>
                 </ul>
               </div>
             {{/if}}
             {{#if editOrdealAbility}}
-              <a class="btn btn-sm btn-default" href="{{pathFor 'edit-ordeal'}}">Edit</a>
+              <a class="btn btn-sm btn-default" href="{{pathFor 'ordeals-edit' _id=_id}}">Edit</a>
             {{/if}}
             {{#if notLoggedIn}}
-              <a class="btn btn-sm btn-default" href="{{pathFor 'view-ordeal'}}">View</a>
+              <a class="btn btn-sm btn-default" href="{{pathFor 'ordeals-view' _id=_id}}">View</a>
             {{/if}}
           </td>
         </tr>

@@ -26,7 +26,7 @@ Template.ordealsList.events({
         if(error) {
           Bert.alert(error.reason, "danger");
         } else {
-          Router.go("/");
+          FlowRouter.go("/");
         }
       });
   }

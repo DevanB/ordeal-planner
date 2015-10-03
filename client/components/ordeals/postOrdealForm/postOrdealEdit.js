@@ -28,7 +28,10 @@ Template.postOrdealEdit.events({
   },
   'click #addOrdealMasterBtn': function(e) {
     e.preventDefault();
-    $('#ordealMasters').append('<div class="row"><div class="col-xs-6"><label for="ordealMasterName">Name</label><input type="text" class="form-control" name="ordealMasterName" placeholder="Name"></div><div class="col-xs-5"><label for="ordealMasterRating">Rating</label><input type="text" class="form-control" name="ordealMasterRating" placeholder="Rating"></div><div class="col-xs-1"><label for="removeBtn">&nbsp;</label><br/><a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a></div></div>');
+    // $('#ordealMasters').append('<div class="row"><div class="col-xs-6"><label for="ordealMasterName">Name</label><input type="text" class="form-control" name="ordealMasterName" placeholder="Name"></div><div class="col-xs-5"><label for="ordealMasterRating">Rating</label>{{> starsRating rating=rating id="ordealMasterRating" name="ordealMasterRating" class="awesome" size=20 mutable=true}}</div><div class="col-xs-1"><label for="removeBtn">&nbsp;</label><br/><a href="#" class="removeBtn btn btn-default"><i class="fa fa-times"></i></a></div></div>');
+    var clone = $('#ordealMasters .row:last-child').clone().appendTo('#ordealMasters');
+    clone.find('[type=text]').val('');
+    clone.find('[id="ordealMasterRating"]').data('userrating', '5');
   },
   'click #addClanBtn': function(e) {
     e.preventDefault();
@@ -37,6 +40,10 @@ Template.postOrdealEdit.events({
   'click .removeBtn': function(e) {
     e.preventDefault();
     $(e.target).closest(".row").remove();
+  },
+  'click .stars': function(e) {
+    var stars = $(e.currentTarget).data('stars');
+    $(e.currentTarget).parents('div.stars-rating').siblings("input[name='ordealMasterRating']").val(stars);
   },
   'submit form': function(e) {
     e.preventDefault();
@@ -121,7 +128,7 @@ Template.postOrdealEdit.events({
       if (error) {
         Bert.alert(error.reason, "danger");
       } else {
-        Router.go("/");
+        FlowRouter.go("/");
       };
     });
   }
