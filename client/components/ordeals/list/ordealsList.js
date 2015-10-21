@@ -29,5 +29,8 @@ Template.ordealsList.events({
           FlowRouter.go("/");
         }
       });
+  },
+  'click #view-ordeal': function(e){
+    Logger.logEvent("access", Meteor.userId(), Meteor.user().emails[0].address, "Ordeals", this._id, "patientId", "patientName", "testing message");
   }
 });
