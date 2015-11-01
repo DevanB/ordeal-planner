@@ -18,7 +18,6 @@ browser-policy
 themeteorchef:bert
 meteorhacks:ssr
 fortawesome:fontawesome
-east5th:check-checker
 alanning:roles
 barbatus:stars-rating
 momentjs:moment
@@ -32,3 +31,6 @@ fourseven:scss
 ajduke:bootstrap-tagsinput
 meteortoys:allthings
 ecmascript
+react
+kadira:react-layout
+east5th:check-checker
