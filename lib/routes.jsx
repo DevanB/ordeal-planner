@@ -37,7 +37,7 @@ if (Meteor.isClient) {
 
 FlowRouter.notFound = {
   action() {
-    ReactLayout.render( Layout, { yield: <NotFound /> } );
+    ReactLayout.render(Layout, { yield: <NotFound /> } );
   }
 };
 
@@ -71,8 +71,8 @@ publicRoutes.route('/recover-password', {
 
 publicRoutes.route('/reset-password/:token', {
   name: 'reset-password',
-  action() {
-    ReactLayout.render(Layout, {yield: <ResetPassword />});
+  action(params) {
+    ReactLayout.render(Layout, {yield: <ResetPassword token={params.token}/>});
   },
 });
 
@@ -85,14 +85,14 @@ authenticatedRoutes.route('/ordeals/create', {
 
 authenticatedRoutes.route('/ordeals/edit/:_id', {
   name: 'ordeals-edit',
-  action() {
-    ReactLayout.render(Layout, {yield: <OrdealEdit />});
+  action(params) {
+    ReactLayout.render(Layout, {yield: <OrdealEdit ordeal={params._id}/>});
   }
 });
 
 FlowRouter.route('/ordeals/:_id', {
   name: 'ordeals-view',
-  action() {
-    BlazeLayout.render('layout', {content: 'ordealsView'});
+  action(params) {
+    ReactLayout.render(Layout, {yield: <OrdealView ordeal={params._id}/>});
   }
 });

@@ -1,4 +1,4 @@
-Template.ordealsCreate.onRendered(function(){
+Template.ordealsCreate.onRendered(function() {
   $('.datetimepicker').datetimepicker();
   $('#createOrdealForm').validate({
     rules: {
@@ -20,23 +20,23 @@ Template.ordealsCreate.onRendered(function(){
     },
     messages: {
       vcInductions: {
-        required: "Who is the current VC Inductions?",
+        required: 'Who is the current VC Inductions?',
       },
       vcInductionsAdviser: {
-        required: "Who is the current VC Inductions Adviser?",
+        required: 'Who is the current VC Inductions Adviser?',
       },
       name: {
-        required: "Please enter a name. Example: May Ordeal 2016",
+        required: 'Please enter a name. Example: May Ordeal 2016',
       },
       location: {
-        required: "Where is this Ordeal happening?",
+        required: 'Where is this Ordeal happening?',
       },
       date: {
-        required: "When is this Ordeal beginning?",
+        required: 'When is this Ordeal beginning?',
       }
     },
-    submitHandler: function(){
-      var ordeal = {
+    submitHandler() {
+      const ordeal = {
         name: $('[name="name"]').val(),
         location: $('[name="location"]').val(),
         date: $('[name="date"]').val(),
@@ -44,18 +44,18 @@ Template.ordealsCreate.onRendered(function(){
         vcInductionsAdviser: $('[name="vcInductionsAdviser"]').val(),
       };
 
-      Meteor.call('createOrdeal', ordeal, function(error, response){
+      Meteor.call('createOrdeal', ordeal, function(error, response) {
         if (error) {
-          Bert.alert(error.reason, "danger");
+          Bert.alert(error.reason, 'danger');
         } else {
-          FlowRouter.go("/ordeals/edit/" + response);
-        };
+          FlowRouter.go('/ordeals/edit/' + response);
+        }
       });
     }
   });
 });
 Template.ordealsCreate.events({
-  'submit form': function(e) {
-    e.preventDefault();
+  'submit form'(event) {
+    event.preventDefault();
   }
 });

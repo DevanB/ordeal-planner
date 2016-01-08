@@ -1,7 +1,7 @@
 OrdealsList = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData() {
-    const subscription = Meteor.subscribe('allOrdeals');
+    const subscription = Meteor.subscribe('allOrdealsForList');
 
     return {
       isLoading: !subscription.ready(),
@@ -24,7 +24,20 @@ OrdealsList = React.createClass({
           {this.addOrdealBtn()}
         </div>
         <div className="row">
-          <OrdealsTable ordeals={this.data.ordeals}/>
+        <Table
+          noDataString="No ordeals in planner."
+          data={this.data.ordeals}
+          keys={['name', 'location', 'date', '_id']}
+          header={['Name', 'Location', 'Date', 'View']}
+          transforms={[
+            {key: 'name', transform: function(value) {return (value);}},
+            {key: 'location', transform: function(value) {return (value);}},
+            {key: 'date', transform: function(value) {return (value);}},
+            {key: '_id', transform: function() {return (<a href="/view-ordeal/">View</a>);}}
+          ]}
+          />
+
+        {/*<OrdealsTable ordeals={this.data.ordeals}/>*/}
         </div>
       </div>
     );
