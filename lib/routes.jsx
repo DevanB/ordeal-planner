@@ -36,6 +36,7 @@ if (Meteor.isClient) {
 }
 
 FlowRouter.notFound = {
+  name: 'notFound',
   action() {
     ReactLayout.render(Layout, { yield: <NotFound /> } );
   }
@@ -73,7 +74,7 @@ publicRoutes.route('/reset-password/:token', {
   name: 'reset-password',
   action(params) {
     ReactLayout.render(Layout, {yield: <ResetPassword token={params.token}/>});
-  },
+  }
 });
 
 authenticatedRoutes.route('/ordeals/create', {

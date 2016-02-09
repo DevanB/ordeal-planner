@@ -3,32 +3,33 @@ PreOrdealEditForm = React.createClass({
     ordeal: React.PropTypes.object.isRequired
   },
   render() {
+    const ordeal = this.props.ordeal;
     return (
       <form>
         <div className="row">
           <div className="col-xs-12 col-sm-6">
             <label htmlFor="vcInductions">Vice-Chief of Inductions</label>
-            <input type="text" value="{{vcInductions}}" className="form-control" id="vcInductions" placeholder="Vice-Chief of Inductions"/>
+            <input type="text" defaultValue={ordeal.vcInductions} className="form-control" id="vcInductions" placeholder="Vice-Chief of Inductions"/>
           </div>
           <div className="col-xs-12 col-sm-6">
             <label htmlFor="vcInductionsAdviser">Vice-Chief of Inductions Adviser</label>
-            <input type="text" value="{{vcInductionsAdviser}}" className="form-control" id="vcInductionsAdviser" placeholder="Vice-Chief of Inductions Adviser"/>
+            <input type="text" defaultValue={ordeal.vcInductionsAdviser} className="form-control" id="vcInductionsAdviser" placeholder="Vice-Chief of Inductions Adviser"/>
           </div>
         </div>
         <hr/>
         <div className="row">
           <div className="col-xs-12 col-sm-4">
             <label htmlFor="name">Name</label>
-            <input type="text" value="{{name}}" className="form-control" id="name" placeholder="ex: Spring Ordeal 2015"/>
+            <input type="text" defaultValue={ordeal.name} className="form-control" id="name" placeholder="ex: Spring Ordeal 2015"/>
           </div>
           <div className="col-xs-12 col-sm-4">
             <label htmlFor="location">Location</label>
-            <input type="text" value="{{location}}" className="form-control" id="location" placeholder="ex: Camp Sequoyah"/>
+            <input type="text" defaultValue={ordeal.location} className="form-control" id="location" placeholder="ex: Camp Sequoyah"/>
           </div>
           <div className="col-xs-12 col-sm-4">
             <label htmlFor="datetime">Ordeal Begins</label>
             <div className="input-group datetimepicker">
-              <input className="set-due-date form-control" type="text" value="{{date}}" id="date" placeholder="ex: 10/03/2015 06:00 PM"/>
+              <input className="set-due-date form-control" type="text" defaultValue={ordeal.date} id="date" placeholder="ex: 10/03/2015 06:00 PM"/>
               <span className="input-group-addon"><i className="fa fa-calendar"></i></span>
             </div>
           </div>
@@ -37,30 +38,30 @@ PreOrdealEditForm = React.createClass({
         <div className="row">
           <div className="col-xs-12 col-sm-4">
             <label htmlFor="lodgeChief">Lodge Chief</label>
-            <input type="text" value="{{lodgeChief}}" className="form-control" id="lodgeChief" placeholder="Lodge Chief"/>
+            <input type="text" defaultValue={ordeal.lodgeChief} className="form-control" id="lodgeChief" placeholder="Lodge Chief"/>
           </div>
           <div className="col-xs-12 col-sm-4">
             <label htmlFor="lodgeAdviser">Lodge Adviser</label>
-            <input type="text" value="{{lodgeAdviser}}" className="form-control" id="lodgeAdviser" placeholder="Lodge Adviser"/>
+            <input type="text" defaultValue={ordeal.lodgeAdviser} className="form-control" id="lodgeAdviser" placeholder="Lodge Adviser"/>
           </div>
           <div className="col-xs-12 col-sm-4">
             <label htmlFor="lodgeStaffAdviser">Lodge Staff Adviser</label>
-            <input type="text" value="{{lodgeStaffAdviser}}" className="form-control" id="lodgeStaffAdviser" placeholder="Lodge Staff Adviser"/>
+            <input type="text" defaultValue={ordeal.lodgeStaffAdviser} className="form-control" id="lodgeStaffAdviser" placeholder="Lodge Staff Adviser"/>
           </div>
         </div>
         <hr/>
         <div className="row">
           <div className="col-xs-12 col-sm-4">
             <label htmlFor="candidatesPreRegistered">Candidates Pre-Registered</label>
-            <input type="number" value="{{candidatesPreRegistered}}" className="form-control" id="candidatesPreRegistered" placeholder="Candidates Pre-Registered"/>
+            <input type="number" defaultValue={ordeal.candidatesPreRegistered} className="form-control" id="candidatesPreRegistered" placeholder="Candidates Pre-Registered"/>
           </div>
           <div className="col-xs-12 col-sm-4">
             <label htmlFor="candidatesAnticipated">Candidates Anticipated</label>
-            <input type="number" value="{{candidatesAnticipated}}" className="form-control" id="candidatesAnticipated" placeholder="Candidates Anticipated"/>
+            <input type="number" defaultValue={ordeal.candidatesAnticipated} className="form-control" id="candidatesAnticipated" placeholder="Candidates Anticipated"/>
           </div>
           <div className="col-xs-12 col-sm-4">
             <label htmlFor="membersAnticipated">Members Anticipated</label>
-            <input type="number" value="{{membersAnticipated}}" className="form-control" id="membersAnticipated" placeholder="Members Anticipated"/>
+            <input type="number" defaultValue={ordeal.membersAnticipated} className="form-control" id="membersAnticipated" placeholder="Members Anticipated"/>
           </div>
         </div>
         <hr/>
@@ -68,13 +69,13 @@ PreOrdealEditForm = React.createClass({
           <div className="col-xs-12 col-sm-6">
             <div className="form-group">
               <label htmlFor="medic">Medic</label>
-              <input type="text" value="{{medic}}" className="form-control" id="medic" placeholder="Medic"/>
+              <input type="text" defaultValue={ordeal.medic} className="form-control" id="medic" placeholder="Medic"/>
             </div>
           </div>
           <div className="col-xs-12 col-sm-6">
             <div className="form-group">
               <label htmlFor="interfaithServiceLeader">Interfaith Service Leader</label>
-              <input type="text" value="{{interfaithServiceLeader}}" className="form-control" id="interfaithServiceLeader" placeholder="Interfaith Service Leader"/>
+              <input type="text" defaultValue={ordeal.interfaithServiceLeader} className="form-control" id="interfaithServiceLeader" placeholder="Interfaith Service Leader"/>
             </div>
           </div>
         </div>
@@ -82,19 +83,19 @@ PreOrdealEditForm = React.createClass({
           <div className="col-xs-12 col-sm-4">
             <div className="form-group">
               <label htmlFor="brotherhoodChairman">Brotherhood Chairman</label>
-              <input type="text" value="{{brotherhoodChairman}}" className="form-control" id="brotherhoodChairman" placeholder="Brotherhood Chairman"/>
+              <input type="text" defaultValue={ordeal.brotherhoodChairman} className="form-control" id="brotherhoodChairman" placeholder="Brotherhood Chairman"/>
             </div>
           </div>
           <div className="col-xs-12 col-sm-4">
             <div className="form-group">
               <label htmlFor="specialNeedsClan">Special Needs Clan</label>
-              <input type="text" value="{{specialNeedsClan}}" className="form-control" id="specialNeedsClan" placeholder="ex: Goat"/>
+              <input type="text" defaultValue={ordeal.specialNeedsClan} className="form-control" id="specialNeedsClan" placeholder="ex: Goat"/>
             </div>
           </div>
           <div className="col-xs-12 col-sm-4">
             <div className="form-group">
               <label htmlFor="lateArrivalClan">Late Arrival Clan</label>
-              <input type="text" value="{{lateArrivalClan}}" className="form-control" id="lateArrivalClan" placeholder="ex: Falcon"/>
+              <input type="text" defaultValue={ordeal.lateArrivalClan} className="form-control" id="lateArrivalClan" placeholder="ex: Falcon"/>
             </div>
           </div>
         </div>
@@ -115,12 +116,12 @@ PreOrdealEditForm = React.createClass({
           <div className="row">
             <div className="col-xs-6">
               <label htmlFor="preOrdealTeamChapter">Chapter</label>
-              <input type="text" value="{{chapter}}" className="form-control" name="preOrdealTeamChapter" placeholder="Chapter"/>
+              <input type="text" defaultValue={ordeal.chapter} className="form-control" name="preOrdealTeamChapter" placeholder="Chapter"/>
             </div>
             <div className="col-xs-5">
               <label htmlFor="preOrdealTeamETA">ETA</label>
               <div className="input-group datetimepicker">
-                <input className="set-due-date form-control" type="text" value="{{eta}}" name="preOrdealTeamETA" placeholder="ETA"/>
+                <input className="set-due-date form-control" type="text" defaultValue={ordeal.eta} name="preOrdealTeamETA" placeholder="ETA"/>
                 <span className="input-group-addon"><i className="fa fa-calendar"></i></span>
               </div>
             </div>
@@ -143,12 +144,12 @@ PreOrdealEditForm = React.createClass({
           <div claclassNamess="row">
             <div className="col-xs-6">
               <label htmlFor="ordealTeamChapter">Chapter</label>
-              <input type="text" value="{{chapter}}" className="form-control" name="ordealTeamChapter" placeholder="Chapter"/>
+              <input type="text" defaultValue={ordeal.chapter} className="form-control" name="ordealTeamChapter" placeholder="Chapter"/>
             </div>
             <div className="col-xs-5">
               <label htmlFor="ordealTeamETA">ETA</label>
               <div className="input-group datetimepicker">
-                <input className="set-due-date form-control" type="text" value="{{eta}}" name="ordealTeamETA" placeholder="ETA"/>
+                <input className="set-due-date form-control" type="text" defaultValue={ordeal.eta} name="ordealTeamETA" placeholder="ETA"/>
                 <span className="input-group-addon"><i className="fa fa-calendar"></i></span>
               </div>
             </div>
@@ -171,12 +172,12 @@ PreOrdealEditForm = React.createClass({
           <div className="row">
             <div className="col-xs-6">
               <label htmlFor="brotherhoodTeamChapter">Chapter</label>
-              <input type="text" value="{{chapter}}" className="form-control" name="brotherhoodTeamChapter" placeholder="Chapter"/>
+              <input type="text" defaultValue={ordeal.chapter} className="form-control" name="brotherhoodTeamChapter" placeholder="Chapter"/>
             </div>
             <div className="col-xs-5">
               <label htmlFor="brotherhoodTeamETA">ETA</label>
               <div className="input-group datetimepicker">
-                <input className="set-due-date form-control" type="text" value="{{eta}}" name="brotherhoodTeamETA" placeholder="ETA"/>
+                <input className="set-due-date form-control" type="text" defaultValue={ordeal.eta} name="brotherhoodTeamETA" placeholder="ETA"/>
                 <span className="input-group-addon"><i className="fa fa-calendar"></i></span>
               </div>
             </div>
@@ -199,7 +200,7 @@ PreOrdealEditForm = React.createClass({
           <div className="row">
             <div className="col-xs-11">
               <label htmlFor="ordealMasterName">Name</label>
-              <input type="text" value="{{name}}" className="form-control" name="ordealMasterName" placeholder="Name"/>
+              <input type="text" defaultValue={ordeal.name} className="form-control" name="ordealMasterName" placeholder="Name"/>
             </div>
             <div className="col-xs-1">
               <label htmlFor="removeBtn">&nbsp;</label><br/>
@@ -220,12 +221,12 @@ PreOrdealEditForm = React.createClass({
           <div className="row">
             <div className="col-xs-6">
               <label htmlFor="lateArrivalName">Name</label>
-              <input type="text" value="{{name}}" className="form-control" name="lateArrivalName" placeholder="Name"/>
+              <input type="text" defaultValue={ordeal.name} className="form-control" name="lateArrivalName" placeholder="Name"/>
             </div>
             <div className="col-xs-5">
               <label htmlFor="lateArrivalETA">ETA</label>
               <div className="input-group datetimepicker">
-                <input className="set-due-date form-control" type="text" value="{{eta}}" name="lateArrivalETA" placeholder="ETA"/>
+                <input className="set-due-date form-control" type="text" defaultValue={ordeal.eta} name="lateArrivalETA" placeholder="ETA"/>
                 <span className="input-group-addon"><i className="fa fa-calendar"></i></span>
               </div>
             </div>

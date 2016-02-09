@@ -2,6 +2,16 @@ Ordeal = React.createClass({
   propTypes: {
     ordeal: React.PropTypes.object.isRequired
   },
+  deleteOrdeal(event) {
+    event.preventDefault();
+    Meteor.callPromise('deleteOrdeal', this.props.ordeal._id)
+      .then(() => {
+        Bert.alert('Successfully deleted ordeal.', 'success');
+      })
+      .catch((error) => {
+        Bert.alert(error.reason, 'danger');
+      });
+  },
   options() {
     if (Roles.userIsInRole(Meteor.userId(), ['admin'])) {
       return (
@@ -13,7 +23,7 @@ Ordeal = React.createClass({
           </button>
           <ul className="dropdown-menu">
             <li><a id="view-ordeal" href={FlowHelpers.pathFor('ordeals-view', {'_id': this.props.ordeal._id})}>View</a></li>
-            <li><a href="#" className="deleteOrdealBtn">Delete</a></li>
+            <li><a href="#" onClick={ this.deleteOrdeal }>Delete</a></li>
           </ul>
         </div>
       );
@@ -31,8 +41,7 @@ Ordeal = React.createClass({
         </div>
       );
     }
-
-    return <a className="btn btn-sm btn-default" href={FlowHelpers.pathFor('ordeals-view', {'_id': this.props.ordeal._id})}>View</a>;
+    return (<a className="btn btn-sm btn-default" href={ FlowHelpers.pathFor('ordeals-view', { '_id': this.props.ordeal._id }) }>View</a>);
   },
   render() {
     return (

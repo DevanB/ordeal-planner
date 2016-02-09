@@ -12,10 +12,7 @@ check
 audit-argument-checks
 themeteorchef:jquery-validation
 twbs:bootstrap
-browser-policy
 
-
-themeteorchef:bert
 meteorhacks:ssr
 fortawesome:fontawesome
 alanning:roles
@@ -31,6 +28,8 @@ fourseven:scss
 ajduke:bootstrap-tagsinput
 meteortoys:allthings
 ecmascript
-react
 kadira:react-layout
 east5th:check-checker
+themeteorchef:bert
+react
+deanius:promise

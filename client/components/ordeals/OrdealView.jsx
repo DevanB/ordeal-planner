@@ -1,7 +1,6 @@
 // sortedLateArrivals: function(lateArrivals) {
 //   return _.sortBy(lateArrivals, function(lateArrival) { return Date.parse(lateArrival.eta); });
 // }
-
 OrdealView = React.createClass({
   propTypes: {
     ordeal: React.PropTypes.string.isRequired
@@ -14,6 +13,13 @@ OrdealView = React.createClass({
       isLoading: !subscription.ready(),
       ordeal: Ordeals.findOne()
     };
+  },
+  renderOrdealMasters() {
+    return this.data.ordeal.ordealMasters.map((ordealMaster, index) => {
+      return <OrdealMaster key={index} ordealMaster={ordealMaster} readOnly />;
+    });
+    // }
+    // return <p>No ordeal masters</p>;
   },
   render() {
     const ordeal = this.data.ordeal ? this.data.ordeal : '';
@@ -49,15 +55,7 @@ OrdealView = React.createClass({
             <strong>Special Needs Clan</strong>: {ordeal.specialNeedsClan}<br/>
             <strong>Late Arrival Clan</strong>: {ordeal.lateArrivalClan}<br/><br/>
 
-          {/* {{#if ordealMasters}} */}
-              <h4>Ordeal Masters</h4>
-            {/* {{#each ordealMasters}} */}
-              <p>
-                <strong>Name</strong>: {ordeal.name}<br/>
-                <strong>Rating</strong>: {ordeal.rating}
-              </p>
-              {/* {{/each}} */}<br/>
-            {/* {{/if}} */}
+          {/* {this.renderOrdealMasters()}*/}
 
             {/* {{#if lateArrivals}} */}
               <h4>Late Arrivals</h4>
