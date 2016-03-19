@@ -8,18 +8,58 @@ OrdealView = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData() {
     const subscription = Meteor.subscribe('ordeal', this.props.ordeal);
-
     return {
       isLoading: !subscription.ready(),
       ordeal: Ordeals.findOne()
     };
   },
+  renderLateArrivals() {
+    if (this.data.ordeal && this.data.ordeal.lateArrivals) {
+      this.data.ordeal.lateArrivals.map((lateArrival, index) => {
+        return (<LateArrival lateArrival={ lateArrival } key={ index } readOnly/>);
+      });
+    }
+    return (<p>No Late Arrivals</p>);
+  },
   renderOrdealMasters() {
-    return this.data.ordeal.ordealMasters.map((ordealMaster, index) => {
-      return <OrdealMaster key={index} ordealMaster={ordealMaster} readOnly />;
-    });
-    // }
-    // return <p>No ordeal masters</p>;
+    if (this.data.ordeal && this.data.ordeal.ordealMasters) {
+      this.data.ordealMasters.map((ordealMaster, index) => {
+        return (<OrdealMaster ordealMaster={ ordealMaster } key={ index } readOnly/>);
+      });
+    }
+    return (<p>No Ordeal Masters</p>);
+  },
+  renderPreOrdealTeams() {
+    if (this.data.ordeal && this.data.ordeal.preOrdealTeams) {
+      this.data.preOrdealTeams.map((preOrdealTeam, index) => {
+        return (<Team team={ preOrdealTeam } key={ index } readOnly/>);
+      });
+    }
+    return (<p>No Pre Ordeal Teams</p>);
+  },
+  renderOrdealTeams() {
+    if (this.data.ordeal && this.data.ordeal.ordealTeams) {
+      this.data.ordealTeams.map((ordealTeam, index) => {
+        return (<Team team={ ordealTeam } key={ index } readOnly/>);
+      });
+    }
+    return (<p>No Ordeal Teams</p>);
+  },
+  renderBrotherhoodTeams() {
+    if (this.data.ordeal && this.data.ordeal.brotherhoodTeams) {
+      this.data.brotherhoodTeams.map((brotherhoodTeam, index) => {
+        return (<Team team={ brotherhoodTeam } key={ index } readOnly/>);
+      });
+    }
+    return (<p>No Brotherhood Teams</p>);
+  },
+  renderClans() {
+    if (this.data.ordeal && this.data.ordeal.clans) {
+      this.data.clans.map((clan, index) => {
+        return (<Clan clan={ clan } key={ index } readOnly/>);
+      });
+    }
+    return (<p>No Clans</p>);
   },
   render() {
     const ordeal = this.data.ordeal ? this.data.ordeal : '';
@@ -55,65 +95,17 @@ OrdealView = React.createClass({
             <strong>Special Needs Clan</strong>: {ordeal.specialNeedsClan}<br/>
             <strong>Late Arrival Clan</strong>: {ordeal.lateArrivalClan}<br/><br/>
 
-          {/* {this.renderOrdealMasters()}*/}
-
-            {/* {{#if lateArrivals}} */}
-              <h4>Late Arrivals</h4>
-              {/* {{#each sortedLateArrivals lateArrivals}} */}
-              <p>
-                <strong>Name</strong>: {ordeal.name}<br/>
-                <strong>ETA</strong>: {ordeal.eta}
-              </p>
-              {/* {{/each}} */}<br/>
-            {/* {{/if}} */}
+            { this.renderOrdealMasters() }
+            { this.renderLateArrivals() }
           </div>
           <div className="col-xs-12 col-sm-6">
-          {/*  {{#if preOrdealTeams}}*/}
-              <h4>Pre-Ordeal Teams</h4>
-            {/*  {{#each preOrdealTeams}}*/}
-              <p>
-                <strong>Chapter</strong>: {ordeal.chapter}<br/>
-                <strong>ETA</strong>: {ordeal.eta}<br/>
-                <strong>Performed</strong>: {ordeal.performed}
-              </p>
-          {/*    {{/each}}*/}<br/>
-          {/*  {{/if}}*/}
-
-          {/*  {{#if ordealTeams}} */}
-              <h4>Ordeal Teams</h4>
-            {/*  {{#each ordealTeams}} */}
-              <p>
-                <strong>Chapter</strong>: {ordeal.chapter}<br/>
-                <strong>ETA</strong>: {ordeal.eta}<br/>
-                <strong>Performed</strong>: {ordeal.performed}
-              </p>
-            {/*  {{/each}}*/}<br/>
-          {/*  {{/if}}*/}
-
-            {/* {{#if brotherhoodTeams}} */}
-              <h4>Brotherhood Teams</h4>
-              {/* {{#each brotherhoodTeams}} */}
-              <p>
-                <strong>Chapter</strong>: {ordeal.chapter}<br/>
-                <strong>ETA</strong>: {ordeal.eta}<br/>
-                <strong>Performed</strong>: {ordeal.performed}
-              </p>
-            {/*  {{/each}}*/}<br/>
-            {/* {{/if}}*/}
-
-            {/* {{#if clans}}*/}
-              <h4>Clans</h4>
-            {/*  {{#each clans}}*/}
-              <p>
-                <strong>Name</strong>: {ordeal.name}<br/>
-                <strong>Elangomat</strong>: {ordeal.elangomat}<br/>
-                <strong>Candidates</strong>: {ordeal.numberOfCandidates}<br/>
-                <strong>Poor Elangomat</strong>: {ordeal.poorElangomat}
-              </p>
-              {/* {{/each}} */}
-            {/* {{/if}} */}
+            { this.renderPreOrdealTeams() }
+            { this.renderOrdealTeams() }
+            { this.renderBrotherhoodTeams() }
+            { this.renderClans() }
           </div>
         </div>
+        <hr/>
         <div className="row">
           <div className="col-xs-12">
             <p><strong>Roses</strong>: {ordeal.roses}</p>

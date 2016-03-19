@@ -9,7 +9,7 @@ OrdealsList = React.createClass({
   },
   addOrdealBtn() {
     if (Meteor.user()) {
-      return <a href={FlowHelpers.pathFor('ordeals-create')} className="pull-right btn btn-sm btn-success"><i className="fa fa-plus"></i>&nbsp;Add Ordeal</a>;
+      return <a href={ FlowRouter.path('ordeals-create') } className="pull-right btn btn-sm btn-success"><i className="fa fa-plus"></i>&nbsp;Add Ordeal</a>;
     }
   },
   render() {
@@ -20,10 +20,21 @@ OrdealsList = React.createClass({
       <div>
         <div className="row">
           <h1>Ordeals</h1>
-          {this.addOrdealBtn()}<br/>
+          { this.addOrdealBtn() }<br/>
         </div>
         <div className="row">
-          <OrdealsTable ordeals={this.data.ordeals}/>
+          <div className="col-xs-3">Name</div>
+          <div className="col-xs-3">Location</div>
+          <div className="col-xs-3">Begins</div>
+          <div className="col-xs-3">Options</div>
+        </div>
+        <hr/>
+        <div className="row">
+          {
+            this.data.ordeals.map((ordeal, index) => {
+              return <Ordeal key={ index } ordeal={ ordeal } />;
+            })
+          }
         </div>
       </div>
     );

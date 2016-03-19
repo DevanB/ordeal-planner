@@ -20,7 +20,7 @@ const authenticatedRoutes = FlowRouter.group({
   triggersEnter: [authenticatedRedirect]
 });
 
-Accounts.onLogin( () => {
+Accounts.onLogin(() => {
   const currentRoute = FlowRouter.current();
   if (currentRoute && currentRoute.route.group.name === 'public') {
     FlowRouter.go('index');
@@ -28,7 +28,7 @@ Accounts.onLogin( () => {
 });
 
 if (Meteor.isClient) {
-  Tracker.autorun( () => {
+  Tracker.autorun(() => {
     if (!Meteor.userId() && FlowRouter.current().route) {
       FlowRouter.go('index');
     }
@@ -38,62 +38,62 @@ if (Meteor.isClient) {
 FlowRouter.notFound = {
   name: 'notFound',
   action() {
-    ReactLayout.render(Layout, { yield: <NotFound /> } );
+    ReactLayout.render(Layout, { content: <NotFound /> });
   }
 };
 
 FlowRouter.route('/', {
   name: 'index',
   action() {
-    ReactLayout.render(Layout, {yield: <OrdealsList />});
+    ReactLayout.render(Layout, { content: <OrdealsList /> });
   }
 });
 
 publicRoutes.route('/signup', {
   name: 'signup',
   action() {
-    ReactLayout.render(Layout, {yield: <Signup />});
+    ReactLayout.render(Layout, { content: <Signup /> });
   }
 });
 
 publicRoutes.route('/login', {
   name: 'login',
   action() {
-    ReactLayout.render(Layout, {yield: <Login />});
+    ReactLayout.render(Layout, { content: <Login /> });
   }
 });
 
 publicRoutes.route('/recover-password', {
   name: 'recover-password',
   action() {
-    ReactLayout.render(Layout, {yield: <RecoverPassword />});
+    ReactLayout.render(Layout, { content: <RecoverPassword /> });
   }
 });
 
 publicRoutes.route('/reset-password/:token', {
   name: 'reset-password',
   action(params) {
-    ReactLayout.render(Layout, {yield: <ResetPassword token={params.token}/>});
+    ReactLayout.render(Layout, { content: <ResetPassword token={params.token}/> });
   }
 });
 
 authenticatedRoutes.route('/ordeals/create', {
   name: 'ordeals-create',
   action() {
-    ReactLayout.render(Layout, {yield: <OrdealCreate />});
+    ReactLayout.render(Layout, { content: <OrdealCreate /> });
   }
 });
 
 authenticatedRoutes.route('/ordeals/edit/:_id', {
   name: 'ordeals-edit',
   action(params) {
-    ReactLayout.render(Layout, {yield: <OrdealEdit ordeal={params._id}/>});
+    ReactLayout.render(Layout, { content: <OrdealEdit ordeal={params._id}/> });
   }
 });
 
 FlowRouter.route('/ordeals/:_id', {
   name: 'ordeals-view',
   action(params) {
-    ReactLayout.render(Layout, {yield: <OrdealView ordeal={params._id}/>});
+    ReactLayout.render(Layout, { content: <OrdealView ordeal={params._id}/> });
   }
 });

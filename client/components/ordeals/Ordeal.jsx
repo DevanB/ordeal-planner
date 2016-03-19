@@ -12,45 +12,50 @@ Ordeal = React.createClass({
         Bert.alert(error.reason, 'danger');
       });
   },
+  editOrdeal() {
+    FlowRouter.go('ordeals-edit', { _id: this.props.ordeal._id });
+  },
   options() {
     if (Roles.userIsInRole(Meteor.userId(), ['admin'])) {
       return (
         <div className="btn-group">
-          <a className="btn btn-sm btn-default" href={FlowHelpers.pathFor('ordeals-edit', {'_id': this.props.ordeal._id})}>Edit</a>
+          <button type="button" className="btn btn-sm btn-default" onClick={ this.editOrdeal }>Edit</button>
           <button type="button" className="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span className="caret"></span>
             <span className="sr-only">Toggle Dropdown</span>
           </button>
           <ul className="dropdown-menu">
-            <li><a id="view-ordeal" href={FlowHelpers.pathFor('ordeals-view', {'_id': this.props.ordeal._id})}>View</a></li>
-            <li><a href="#" onClick={ this.deleteOrdeal }>Delete</a></li>
+            <li><a id="view-ordeal" href={ FlowRouter.path('ordeals-view', { _id: this.props.ordeal._id }) }>View</a></li>
+            <li><a onClick={ this.deleteOrdeal }>Delete</a></li>
           </ul>
         </div>
       );
     } else if (Meteor.user() && (this.createdBy === Meteor.userId())) {
       return (
         <div className="btn-group">
-          <a className="btn btn-sm btn-default" href={FlowHelpers.pathFor('ordeals-edit', {'_id': this.props.ordeal._id})}>Edit</a>
+          <button type="button" className="btn btn-sm btn-default" onClick={ this.editOrdeal }>Edit</button>
           <button type="button" className="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span className="caret"></span>
             <span className="sr-only">Toggle Dropdown</span>
           </button>
           <ul className="dropdown-menu">
-            <li><a id="view-ordeal" href={FlowHelpers.pathFor('ordeals-view', {'_id': this.props.ordeal._id})}>View</a></li>
+            <li>
+              <a id="view-ordeal" href={ FlowRouter.path('ordeals-view', { _id: this.props.ordeal._id }) }>View</a>
+            </li>
           </ul>
         </div>
       );
     }
-    return (<a className="btn btn-sm btn-default" href={ FlowHelpers.pathFor('ordeals-view', { '_id': this.props.ordeal._id }) }>View</a>);
+    return (<a className="btn btn-default" href={ FlowRouter.path('ordeals-view', { _id: this.props.ordeal._id }) }>View</a>);
   },
   render() {
     return (
-      <tr>
-        <td>{this.props.ordeal.name}</td>
-        <td>{this.props.ordeal.location}</td>
-        <td>{this.props.ordeal.date}</td>
-        <td>{this.options()}</td>
-      </tr>
+      <div>
+        <div className="col-xs-3">{ this.props.ordeal.name }</div>
+        <div className="col-xs-3">{ this.props.ordeal.location }</div>
+        <div className="col-xs-3">{ this.props.ordeal.date }</div>
+        <div className="col-xs-3">{ this.options() }</div>
+      </div>
     );
   }
 });

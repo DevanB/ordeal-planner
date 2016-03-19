@@ -26,12 +26,11 @@ ResetPassword = React.createClass({
         const token = FlowRouter.current().params.token;
         const password = $('[name="newPassword"]').val();
 
-        Accounts.resetPassword(token, password, function(error) {
+        Accounts.resetPassword(token, password, (error) => {
           if (error) {
-            Bert.alert(error.reason, 'danger');
-          } else {
-            Bert.alert('Password successfully reset!', 'success');
+            return Bert.alert(error.reason, 'danger');
           }
+          return Bert.alert('Password successfully reset!', 'success');
         });
       }
     });
