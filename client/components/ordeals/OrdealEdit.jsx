@@ -1,10 +1,13 @@
 OrdealEdit = React.createClass({
+  propTypes: {
+    ordealId: React.PropTypes.string.isRequired
+  },
   mixins: [ReactMeteorData],
   getMeteorData() {
-    const subscription = Meteor.subscribe('ordeal', FlowRouter.getParam('_id'));
+    const subscription = Meteor.subscribe('ordeal', this.props.ordealId);
     return {
       isLoading: !subscription.ready(),
-      ordeal: Ordeals.findOne()
+      ordeal: Ordeals.findOne({ _id: this.props.ordealId })
     };
   },
   ordealEditForm() {
@@ -12,10 +15,10 @@ OrdealEdit = React.createClass({
     const today = moment(new Date()).format('MM/DD/YYYY h:mm A');
     const ordealBegins = moment(ordealDate, 'MM/DD/YYYY h:mm A').format('MM/DD/YYYY h:mm A');
     if (today < ordealBegins) {
-      return <PreOrdealEditForm ordeal={ this.data.ordeal }/>;
+      return <PreOrdealEditForm ordealId={ this.props.ordealId } ordeal={ this.data.ordeal }/>;
     }
 
-    return <PostOrdealEditForm ordeal={ this.data.ordeal }/>;
+    return <PostOrdealEditForm ordealId={ this.props.ordealId } ordeal={ this.data.ordeal }/>;
   },
   render() {
     if (this.data.isLoading) {

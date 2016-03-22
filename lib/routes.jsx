@@ -87,13 +87,20 @@ authenticatedRoutes.route('/ordeals/create', {
 authenticatedRoutes.route('/ordeals/edit/:_id', {
   name: 'ordeals-edit',
   action(params) {
-    ReactLayout.render(Layout, { content: <OrdealEdit ordeal={params._id}/> });
+    ReactLayout.render(Layout, { content: <OrdealEdit ordealId={params._id}/> });
+  }
+});
+
+authenticatedRoutes.route('/ordeals/edit/:_id/schedule', {
+  name: 'ordeals-schedule',
+  action(params) {
+    ReactLayout.render(Layout, { content: <OrdealSchedulerContainer ordealId={params._id}/> });
   }
 });
 
 FlowRouter.route('/ordeals/:_id', {
   name: 'ordeals-view',
   action(params) {
-    ReactLayout.render(Layout, { content: <OrdealView ordeal={params._id}/> });
+    ReactLayout.render(Layout, { content: <OrdealView ordealId={params._id}/> });
   }
 });

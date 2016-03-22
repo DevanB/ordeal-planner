@@ -25,7 +25,8 @@ Ordeal = React.createClass({
             <span className="sr-only">Toggle Dropdown</span>
           </button>
           <ul className="dropdown-menu">
-            <li><a id="view-ordeal" href={ FlowRouter.path('ordeals-view', { _id: this.props.ordeal._id }) }>View</a></li>
+            <li><a href={ FlowRouter.path('ordeals-view', { _id: this.props.ordeal._id }) }>View</a></li>
+            <li><a href={ FlowRouter.path('ordeals-schedule', { _id: this.props.ordeal._id }) }>Schedule</a></li>
             <li><a onClick={ this.deleteOrdeal }>Delete</a></li>
           </ul>
         </div>
@@ -39,9 +40,8 @@ Ordeal = React.createClass({
             <span className="sr-only">Toggle Dropdown</span>
           </button>
           <ul className="dropdown-menu">
-            <li>
-              <a id="view-ordeal" href={ FlowRouter.path('ordeals-view', { _id: this.props.ordeal._id }) }>View</a>
-            </li>
+            <li><a href={ FlowRouter.path('ordeals-view', { _id: this.props.ordeal._id }) }>View</a></li>
+            <li><a href={ FlowRouter.path('ordeals-schedule', { _id: this.props.ordeal._id }) }>Schedule</a></li>
           </ul>
         </div>
       );
