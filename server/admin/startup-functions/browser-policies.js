@@ -1,3 +1,3 @@
-customBrowserPolicies = function(){
-  BrowserPolicy.content.allowEval()
-}
+customBrowserPolicies = function() {
+  BrowserPolicy.content.allowEval();
+};

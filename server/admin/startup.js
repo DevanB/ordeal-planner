@@ -1,4 +1,4 @@
-Meteor.startup(function(){
-  customBrowserPolicies();
+Meteor.startup(() => {
+  // customBrowserPolicies();
   addAdminAccount();
 });
