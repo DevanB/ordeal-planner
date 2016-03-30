@@ -59,12 +59,10 @@ PostOrdealEditForm = React.createClass({
       <form onSubmit={ this.saveOrdeal }>
         <div className="row">
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="name">Name</label>
-            <input readOnly type="text" ref="name" name="name" defaultValue={ this.props.ordeal.name } className="form-control" id="name" placeholder="ex: Spring Ordeal 2015"/>
+            <InputGroup inputName="name" ref="name" label="Name" inputType="text" defaultValue={ this.props.ordeal.name } className="form-control" isReadOnly/>
           </div>
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="location">Location</label>
-            <input readOnly type="text" ref="location" defaultValue={ this.props.ordeal.location } className="form-control" id="location" placeholder="ex: Camp Sequoyah"/>
+            <InputGroup inputName="location" ref="location" label="Location" inputType="text" defaultValue={ this.props.ordeal.location } className="form-control" isReadOnly/>
           </div>
           <div className="col-xs-12 col-sm-4">
             <label htmlFor="datetime">Ordeal Begins</label>
@@ -77,16 +75,13 @@ PostOrdealEditForm = React.createClass({
         <hr/>
         <div className="row">
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="candidates">Candidates</label>
-            <input type="number" ref="candidates" defaultValue={ this.props.ordeal.candidates } className="form-control" id="candidates" placeholder="Candidates Attended"/>
+            <InputGroup inputName="candidates" ref="candidates" label="Candidates" inputType="number" defaultValue={ this.props.ordeal.candidates } className="form-control"/>
           </div>
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="brotherhoods">Brotherhoods</label>
-            <input type="number" ref="brotherhoods" defaultValue={ this.props.ordeal.brotherhoods } className="form-control" id="brotherhoods" placeholder="Brotherhoods Converted"/>
+            <InputGroup inputName="brotherhoods" ref="brotherhoods" label="Brotherhoods" inputType="number" defaultValue={ this.props.ordeal.brotherhoods } className="form-control"/>
           </div>
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="members">Members</label>
-            <input type="number" ref="members" defaultValue={ this.props.ordeal.members } className="form-control" id="members" placeholder="Members Attended"/>
+            <InputGroup inputName="members" ref="members" label="Members" inputType="number" defaultValue={ this.props.ordeal.members } className="form-control"/>
           </div>
         </div>
         <hr/>

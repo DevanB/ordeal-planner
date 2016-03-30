@@ -1,13 +1,19 @@
 HeaderContainer = React.createClass({
+  mixins: [ReactMeteorData],
+  getMeteorData() {
+    return {
+      user: Meteor.user()
+    };
+  },
   currentUserEmail() {
-    return Meteor.user().emails[0].address;
+    return this.data.user.emails[0].address;
   },
   handleLogout() {
     Meteor.logout();
     Bert.alert('Successfully logged out.', 'success');
   },
   navigationItems() {
-    if (!Meteor.loggingIn() && !Meteor.user()) {
+    if (!this.data.user) {
       return <PublicNavigation />;
     }
     return (

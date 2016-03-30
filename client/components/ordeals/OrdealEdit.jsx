@@ -14,7 +14,7 @@ OrdealEdit = React.createClass({
     const ordealDate = this.data.ordeal.date;
     const today = moment(new Date()).format('MM/DD/YYYY h:mm A');
     const ordealBegins = moment(ordealDate, 'MM/DD/YYYY h:mm A').format('MM/DD/YYYY h:mm A');
-    if (today < ordealBegins) {
+    if (today > ordealBegins) {
       return <PreOrdealEditForm ordealId={ this.props.ordealId } ordeal={ this.data.ordeal }/>;
     }
 

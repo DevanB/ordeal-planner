@@ -9,6 +9,7 @@ PreOrdealEditForm = React.createClass({
     const ordeal = {};
     _.each(this.refs, (ref) => {
       if (ref.value) ordeal[ref.id] = ref.value;
+      if (_.get(ref, 'refs.input')) { ordeal[ref.refs.input.id] = ref.refs.input.value; }
     });
 
     const lateArrivals = [];
@@ -57,28 +58,24 @@ PreOrdealEditForm = React.createClass({
       <form onSubmit={ this.saveOrdeal }>
         <div className="row">
           <div className="col-xs-12 col-sm-6">
-            <label htmlFor="vcInductions">Vice-Chief of Inductions</label>
-            <input type="text" ref="vcInductions" defaultValue={ this.props.ordeal.vcInductions } className="form-control" id="vcInductions" placeholder="Vice-Chief of Inductions"/>
+            <InputGroup inputName="vcInductions" ref="vcInductions" label="Vice-Chief of Inductions" inputType="text" defaultValue={ this.props.ordeal.vcInductions } className="form-control" isRequired/>
           </div>
           <div className="col-xs-12 col-sm-6">
-            <label htmlFor="vcInductionsAdviser">Vice-Chief of Inductions Adviser</label>
-            <input type="text" ref="vcInductionsAdviser" defaultValue={ this.props.ordeal.vcInductionsAdviser } className="form-control" id="vcInductionsAdviser" placeholder="Vice-Chief of Inductions Adviser"/>
+            <InputGroup inputName="vcInductionsAdviser" ref="vcInductionsAdviser" label="Vice-Chief of Inductions Adviser" inputType="text" defaultValue={ this.props.ordeal.vcInductionsAdviser } className="form-control" isRequired/>
           </div>
         </div>
         <hr/>
         <div className="row">
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="name">Name</label>
-            <input type="text" ref="name" name="name" defaultValue={ this.props.ordeal.name } className="form-control" id="name" placeholder="ex: Spring Ordeal 2015"/>
+            <InputGroup inputName="name" ref="name" label="Name" inputType="text" defaultValue={ this.props.ordeal.name } className="form-control" placeholder="ex: Spring Ordeal 2015" isRequired/>
           </div>
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="location">Location</label>
-            <input type="text" ref="location" defaultValue={ this.props.ordeal.location } className="form-control" id="location" placeholder="ex: Camp Sequoyah"/>
+            <InputGroup inputName="location" ref="location" label="Location" inputType="text" defaultValue={ this.props.ordeal.location } className="form-control" placeholder="ex: Camp Sequoyah" isRequired/>
           </div>
           <div className="col-xs-12 col-sm-4">
             <label htmlFor="datetime">Ordeal Begins</label>
             <div className="input-group datetimepicker">
-              <input className="set-due-date form-control" type="text" ref="date" defaultValue={ this.props.ordeal.date } id="date" placeholder="ex: 10/03/2015 06:00 PM"/>
+              <input className="set-due-date form-control" type="text" ref="date" defaultValue={ this.props.ordeal.date } id="date" placeholder="ex: 10/03/2015 06:00 PM" required/>
               <span className="input-group-addon"><i className="fa fa-calendar"></i></span>
             </div>
           </div>
@@ -86,65 +83,54 @@ PreOrdealEditForm = React.createClass({
         <hr/>
         <div className="row">
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="lodgeChief">Lodge Chief</label>
-            <input type="text" ref="lodgeChief" defaultValue={ this.props.ordeal.lodgeChief } className="form-control" id="lodgeChief" placeholder="Lodge Chief"/>
+            <InputGroup inputName="lodgeChief" ref="lodgeChief" label="Lodge Chief" inputType="text" defaultValue={ this.props.ordeal.lodgeChief } className="form-control"/>
           </div>
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="lodgeAdviser">Lodge Adviser</label>
-            <input type="text" ref="lodgeAdviser" defaultValue={ this.props.ordeal.lodgeAdviser } className="form-control" id="lodgeAdviser" placeholder="Lodge Adviser"/>
+            <InputGroup inputName="lodgeAdviser" ref="lodgeAdviser" label="Lodge Adviser" inputType="text" defaultValue={ this.props.ordeal.lodgeAdviser } className="form-control"/>
           </div>
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="lodgeStaffAdviser">Lodge Staff Adviser</label>
-            <input type="text" ref="lodgeStaffAdviser" defaultValue={ this.props.ordeal.lodgeStaffAdviser } className="form-control" id="lodgeStaffAdviser" placeholder="Lodge Staff Adviser"/>
+            <InputGroup inputName="lodgeStaffAdviser" ref="lodgeStaffAdviser" label="Lodge Staff Adviser" inputType="text" defaultValue={ this.props.ordeal.lodgeStaffAdviser } className="form-control"/>
           </div>
         </div>
         <hr/>
         <div className="row">
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="candidatesPreRegistered">Candidates Pre-Registered</label>
-            <input type="number" ref="candidatesPreRegistered" defaultValue={ this.props.ordeal.candidatesPreRegistered } className="form-control" id="candidatesPreRegistered" placeholder="Candidates Pre-Registered"/>
+            <InputGroup inputName="candidatesPreRegistered" ref="candidatesPreRegistered" label="Candidates Pre-Registered" inputType="number" defaultValue={ this.props.ordeal.candidatesPreRegistered } className="form-control"/>
           </div>
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="candidatesAnticipated">Candidates Anticipated</label>
-            <input type="number" ref="candidatesAnticipated" defaultValue={ this.props.ordeal.candidatesAnticipated } className="form-control" id="candidatesAnticipated" placeholder="Candidates Anticipated"/>
+            <InputGroup inputName="candidatesAnticipated" ref="candidatesAnticipated" label="Candidates Anticipated" inputType="number" defaultValue={ this.props.ordeal.candidatesAnticipated } className="form-control"/>
           </div>
           <div className="col-xs-12 col-sm-4">
-            <label htmlFor="membersAnticipated">Members Anticipated</label>
-            <input type="number" ref="membersAnticipated" defaultValue={ this.props.ordeal.membersAnticipated } className="form-control" id="membersAnticipated" placeholder="Members Anticipated"/>
+            <InputGroup inputName="membersAnticipated" ref="membersAnticipated" label="Members Anticipated" inputType="number" defaultValue={ this.props.ordeal.membersAnticipated } className="form-control"/>
           </div>
         </div>
         <hr/>
         <div className="row">
           <div className="col-xs-12 col-sm-6">
             <div className="form-group">
-              <label htmlFor="medic">Medic</label>
-              <input type="text" ref="medic" defaultValue={ this.props.ordeal.medic } className="form-control" id="medic" placeholder="Medic"/>
+              <InputGroup inputName="medic" ref="medic" label="Medic" inputType="text" defaultValue={ this.props.ordeal.medic } className="form-control"/>
             </div>
           </div>
           <div className="col-xs-12 col-sm-6">
             <div className="form-group">
-              <label htmlFor="interfaithServiceLeader">Interfaith Service Leader</label>
-              <input type="text" ref="interfaithServiceLeader" defaultValue={ this.props.ordeal.interfaithServiceLeader } className="form-control" id="interfaithServiceLeader" placeholder="Interfaith Service Leader"/>
+              <InputGroup inputName="interfaithServiceLeader" ref="interfaithServiceLeader" label="Interfaith Service Leader" inputType="text" defaultValue={ this.props.ordeal.interfaithServiceLeader } className="form-control"/>
             </div>
           </div>
         </div>
         <div className="row">
           <div className="col-xs-12 col-sm-4">
             <div className="form-group">
-              <label htmlFor="brotherhoodChairman">Brotherhood Chairman</label>
-              <input type="text" ref="brotherhoodChairman" defaultValue={ this.props.ordeal.brotherhoodChairman } className="form-control" id="brotherhoodChairman" placeholder="Brotherhood Chairman"/>
+              <InputGroup inputName="brotherhoodChairman" ref="brotherhoodChairman" label="Brotherhood Chairman" inputType="text" defaultValue={ this.props.ordeal.brotherhoodChairman } className="form-control"/>
             </div>
           </div>
           <div className="col-xs-12 col-sm-4">
             <div className="form-group">
-              <label htmlFor="specialNeedsClan">Special Needs Clan</label>
-              <input type="text" ref="specialNeedsClan" defaultValue={ this.props.ordeal.specialNeedsClan } className="form-control" id="specialNeedsClan" placeholder="ex: Goat"/>
+              <InputGroup inputName="specialNeedsClan" ref="naspecialNeedsClanme" label="Special Needs Clan" inputType="text" defaultValue={ this.props.ordeal.specialNeedsClan } className="form-control" placeholder="ex: Goat"/>
             </div>
           </div>
           <div className="col-xs-12 col-sm-4">
             <div className="form-group">
-              <label htmlFor="lateArrivalClan">Late Arrival Clan</label>
-              <input type="text" ref="lateArrivalClan" defaultValue={ this.props.ordeal.lateArrivalClan } className="form-control" id="lateArrivalClan" placeholder="ex: Falcon"/>
+              <InputGroup inputName="lateArrivalClan" ref="lateArrivalClan" label="Late Arrival Clan" inputType="text" defaultValue={ this.props.ordeal.lateArrivalClan } className="form-control" placeholder="ex: Falcon"/>
             </div>
           </div>
         </div>
