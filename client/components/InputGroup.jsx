@@ -12,7 +12,7 @@ InputGroup = React.createClass({
   render() {
     if (this.props.inputType === 'text' || this.props.inputType === 'number') {
       return (
-        <div>
+        <div className="form-group">
           <label htmlFor={ this.props.inputName }>{ this.props.label }</label>
           <input
             type={ this.props.inputType }
@@ -28,7 +28,7 @@ InputGroup = React.createClass({
       );
     } else if (this.props.inputType === 'textarea') {
       return (
-        <div>
+        <div className="form-group">
           <label htmlFor={ this.props.inputName }>{ this.props.label }</label>
           <textarea
             ref="input"
